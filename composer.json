@@ -1,5 +1,5 @@
 {
-  "name": "roots/bedrock",
+  "name": "silverbackstudio/bedrock",
   "type": "project",
   "license": "MIT",
   "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
@@ -14,6 +14,11 @@
       "name": "Ben Word",
       "email": "ben@benword.com",
       "homepage": "https://github.com/retlehs"
+    },
+    {
+      "name": "Brando Meniconi",
+      "email": "b.meniconi@silverbackstudio.it",
+      "homepage": "https://github.com/brandomeniconi"
     }
   ],
   "keywords": [
@@ -24,7 +29,10 @@
     "forum": "https://discourse.roots.io/category/bedrock"
   },
   "config": {
-    "preferred-install": "dist"
+    "preferred-install": {
+      "silverbackstudio/*": "source",
+      "*":"dist"
+    }
   },
   "repositories": [
     {
@@ -38,10 +46,17 @@
     "vlucas/phpdotenv": "^2.0.1",
     "johnpbloch/wordpress": "4.8.0",
     "oscarotero/env": "^1.0",
-    "roots/wp-password-bcrypt": "1.0.0"
+    "roots/wp-password-bcrypt": "1.0.0",
+    "wpackagist-plugin/jetpack": "^5.0",
+    "wpackagist-plugin/wordpress-seo": "^4.9",
+    "wpackagist-plugin/sendgrid-email-delivery-simplified": "^1.11",
+    "wpackagist-plugin/amp": "^0.4.2",
+    "wpackagist-plugin/shortcode-ui": "^0.7.2",
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^2.5.1"
+    "squizlabs/php_codesniffer": "^2.5.1",
+    "wpackagist-plugin/loco-translate": "^2.0",
+    "wpackagist-plugin/custom-post-type-ui": "^1.5"
   },
   "extra": {
     "installer-paths": {
