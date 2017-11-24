@@ -1,5 +1,5 @@
 {
-  "name": "silverbackstudio/bedrock",
+  "name": "silverback/bedrock",
   "type": "project",
   "license": "MIT",
   "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
@@ -31,6 +31,8 @@
   "config": {
     "preferred-install": {
       "silverbackstudio/*": "source",
+      "silverback/*": "source",
+      "svbk/*": "source",
       "*":"dist"
     }
   },
@@ -48,15 +50,15 @@
     "php": ">=5.6",
     "composer/installers": "^1.4",
     "vlucas/phpdotenv": "^2.0.1",
-    "johnpbloch/wordpress": "4.9.0",
+    "johnpbloch/wordpress": "^4.9.0",
     "oscarotero/env": "^1.1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/jetpack": ">=5.0",
     "wpackagist-plugin/wordpress-seo": ">=4.9",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "^1.11",
     "wpackagist-plugin/amp": "^0.4.2",
-    "wpackagist-plugin/shortcode-ui": "^0.7.2",
     "wpackagist-plugin/safe-svg": ">=1.5.0",
+    "wpackagist-plugin/html-editor-syntax-highlighter": "^2.2",
     "elliotcondon/advanced-custom-fields-pro": "^5.6"
   },
   "require-dev": {
