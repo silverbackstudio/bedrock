@@ -44,7 +44,6 @@ define('WP_SITEURL', env('WP_SITEURL'));
 define('CONTENT_DIR', '/app');
 define('WP_CONTENT_DIR', $webroot_dir . CONTENT_DIR);
 define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
-
 /**
  * DB settings
  */
@@ -74,6 +73,20 @@ define('NONCE_SALT', env('NONCE_SALT'));
 define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 define('DISALLOW_FILE_EDIT', true);
+
+if( env('DOMAIN_CURRENT_SITE')  ) {
+    define( 'MULTISITE', true );
+    define( 'SUBDOMAIN_INSTALL', true );
+    $base = '/';
+    define( 'DOMAIN_CURRENT_SITE', env('DOMAIN_CURRENT_SITE') );
+    define( 'PATH_CURRENT_SITE', '/' );
+    define( 'SITE_ID_CURRENT_SITE', 1 );
+    define( 'BLOG_ID_CURRENT_SITE', 1 );
+
+    //Back compatibily for Wordpress MU Domain Mappoing
+    define('PLUGINDIR', 'app/plugin' );
+    define('MUPLUGINDIR', 'app/plugin' );
+}
 
 /**
  * Bootstrap WordPress
