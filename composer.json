@@ -1,5 +1,5 @@
 {
-  "name": "silverback/skeleton",
+  "name": "silverback/wp-website",
   "type": "project",
   "license": "MIT",
   "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
@@ -54,12 +54,12 @@
     "oscarotero/env": "^1.1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/jetpack": ">=5.0",
-    "wpackagist-plugin/wordpress-seo": ">=4.9",
-    "wpackagist-plugin/sendgrid-email-delivery-simplified": "^1.11",
+    "wpackagist-plugin/wordpress-seo": ">=6.0",
     "wpackagist-plugin/amp": "^0.4.2",
     "wpackagist-plugin/safe-svg": ">=1.5.0",
     "wpackagist-plugin/html-editor-syntax-highlighter": "^2.2",
-    "elliotcondon/advanced-custom-fields-pro": "^5.6"
+    "elliotcondon/advanced-custom-fields-pro": "^5.6",
+    "wpackagist-plugin/wordpress-importer": "0.6.3"    
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
