@@ -80,6 +80,12 @@
     "wordpress-install-dir": "web/wp"
   },
   "scripts": {
+     "pre-install-cmd": [
+      "gcloud source repos clone theme packages/theme"
+    ],
+    "pre-update-cmd": [
+      "git --git-dir=$PWD/packages/theme/.git --work-tree=$PWD/packages/theme/ pull"
+    ],       
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
     ],
