@@ -6,3 +6,15 @@ define('SCRIPT_DEBUG', false);
 /** Disable all file modifications including updates and update notifications */
 define('DISALLOW_FILE_MODS', true);
 define('JETPACK_STAGING_MODE', true);
+
+
+/**
+ * Setup Log Handlers
+ */
+if( class_exists( LoggingClient::class ) ) {
+    Monolog\Registry::getInstance( 'wordpress' )->pushHandler( 
+        new Monolog\Handler\PsrHandler( 
+            Google\Cloud\Logging\LoggingClient::psrBatchLogger('wp-website') 
+        )
+    );
+}
