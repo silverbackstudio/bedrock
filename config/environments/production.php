@@ -9,18 +9,14 @@ define('DISALLOW_FILE_MODS', true);
 /**
  * Setup Log Handlers
  */
-Monolog\Registry::getInstance( 'wordpress' )->pushHandler( 
-    new Monolog\Handler\PsrHandler( Google\Cloud\Logging\LoggingClient::psrBatchLogger('wp-website') )
-);
+$metadataProvider = new Google\Cloud\Core\Report\SimpleMetadataProvider([], '', 'website', '1.0');
 
-if( env('SENDINBLUE_APIKEY') ) {
-    Monolog\Registry::getInstance( 'wordpress' )->pushHandler( 
-        new Svbk\Monolog\Sendinblue\Handler( 
-            env('SENDINBLUE_APIKEY'),
-            'tatap@silverbackstudio.it', 
-            'webmaster@silverbackstudio.it', 
-            'Tatap Website Log',
-            Monolog\Logger::ERROR
-        )
-    );
-}
+$loggingClient = new Google\Cloud\Logging\LoggingClient();
+$psrLogger = $loggingClient->psrLogger('wp-website', [
+    'batchEnabled' => true,
+    'metadataProvider' => $metadataProvider,
+]);
+
+Google\Cloud\ErrorReporting\Bootstrap::init($psrLogger); 
+
+Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\PsrHandler( $psrLogger ) );
