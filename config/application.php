@@ -82,7 +82,13 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 define('DISALLOW_FILE_EDIT', true);
 
+/**
+ * Multisite options
+ */
+define( 'WP_ALLOW_MULTISITE', true );
+
 if( env('DOMAIN_CURRENT_SITE')  ) {
+    
     define( 'MULTISITE', true );
     define( 'SUBDOMAIN_INSTALL', true );
     $base = '/';
@@ -90,10 +96,14 @@ if( env('DOMAIN_CURRENT_SITE')  ) {
     define( 'PATH_CURRENT_SITE', '/' );
     define( 'SITE_ID_CURRENT_SITE', 1 );
     define( 'BLOG_ID_CURRENT_SITE', 1 );
-
-    //Back compatibily for Wordpress MU Domain Mappoing
+    
     define('PLUGINDIR', 'app/plugin' );
     define('MUPLUGINDIR', 'app/plugin' );
+        
+    if( file_exists( CONTENT_DIR . '/sunrise.php' ) ) {
+        define('SUNRISE', 'on' );
+    }
+    
 }
 
 /**
