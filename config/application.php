@@ -104,6 +104,7 @@ if( env('DOMAIN_CURRENT_SITE')  ) {
         define('SUNRISE', 'on' );
     }
     
+    define( 'NOBLOGREDIRECT', env('NOBLOGREDIRECT') ?: WP_HOME );
 }
 
 /**
