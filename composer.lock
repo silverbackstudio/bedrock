@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "049797d727261bf27f2690430d935067710049c2"
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
-                "reference": "049797d727261bf27f2690430d935067710049c2",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
                 "shasum": ""
             },
             "require": {
@@ -124,16 +124,16 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-12-29T09:13:20+00:00"
+            "time": "2018-08-27T06:10:37+00:00"
         },
         {
             "name": "elliotcondon/advanced-custom-fields-pro",
-            "version": "5.6.10",
+            "version": "5.7.6",
             "dist": {
                 "type": "tar",
-                "url": "https://packages.svbk.it/dist/elliotcondon/advanced-custom-fields-pro/elliotcondon-advanced-custom-fields-pro-5.6.10.tar",
+                "url": "https://packages.svbk.it/dist/elliotcondon/advanced-custom-fields-pro/elliotcondon-advanced-custom-fields-pro-5.7.6.tar",
                 "reference": null,
-                "shasum": "328d99351a7b924b773ef9bfeb850286de1ebb45"
+                "shasum": "d56c0aee02864959be0cd8fe648f1b91c8627eb5"
             },
             "type": "wordpress-plugin"
         },
@@ -185,16 +185,16 @@
         },
         {
             "name": "google/auth",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/google/google-auth-library-php.git",
-                "reference": "8f7c96146b2c62d3f4c6bbc4b5bb8a8e396b0b71"
+                "url": "https://github.com/googleapis/google-auth-library-php.git",
+                "reference": "196237248e636a3554a7d9e4dfddeb97f450ab5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-auth-library-php/zipball/8f7c96146b2c62d3f4c6bbc4b5bb8a8e396b0b71",
-                "reference": "8f7c96146b2c62d3f4c6bbc4b5bb8a8e396b0b71",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/196237248e636a3554a7d9e4dfddeb97f450ab5c",
+                "reference": "196237248e636a3554a7d9e4dfddeb97f450ab5c",
                 "shasum": ""
             },
             "require": {
@@ -228,123 +228,20 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2018-04-06T19:26:30+00:00"
-        },
-        {
-            "name": "google/cloud",
-            "version": "v0.33.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GoogleCloudPlatform/google-cloud-php.git",
-                "reference": "df82b6ed1403b9bdce9a1f7e7e9aa34351539934"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php/zipball/df82b6ed1403b9bdce9a1f7e7e9aa34351539934",
-                "reference": "df82b6ed1403b9bdce9a1f7e7e9aa34351539934",
-                "shasum": ""
-            },
-            "require": {
-                "google/auth": "^1.0",
-                "guzzlehttp/guzzle": "^5.3|^6.0",
-                "guzzlehttp/psr7": "^1.2",
-                "monolog/monolog": "~1",
-                "php": ">=5.5",
-                "psr/http-message": "1.0.*",
-                "ramsey/uuid": "~3",
-                "rize/uri-template": "~0.3"
-            },
-            "require-dev": {
-                "erusev/parsedown": "^1.6",
-                "google/gax": "^0.20.1",
-                "google/proto-client": "^0.20.1",
-                "league/json-guard": "^0.3",
-                "phpdocumentor/reflection": "^3.0",
-                "phpseclib/phpseclib": "^2.0",
-                "phpunit/phpunit": "4.8.*",
-                "squizlabs/php_codesniffer": "2.*",
-                "symfony/console": "^3.0",
-                "symfony/lock": "3.3.x-dev#1ba6ac9",
-                "vierbergenlars/php-semver": "^3.0"
-            },
-            "suggest": {
-                "google/gax": "Required to support gRPC",
-                "google/proto-client-php": "Required to support gRPC",
-                "phpseclib/phpseclib": "May be used in place of OpenSSL for creating signed Cloud Storage URLs.",
-                "symfony/lock": "Required for the Spanner cached based session pool. Please require the following commit: 3.3.x-dev#1ba6ac9"
-            },
-            "bin": [
-                "src/Core/bin/google-cloud-batch"
-            ],
-            "type": "library",
-            "extra": {
-                "component": {
-                    "id": "google-cloud",
-                    "target": "git@github.com:jdpedrie-gcp/google-cloud-php.git",
-                    "path": "src",
-                    "entry": "ServiceBuilder.php"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Google\\Cloud\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "John Pedrie",
-                    "email": "john@pedrie.com"
-                },
-                {
-                    "name": "Dave Supplee",
-                    "email": "dwsupplee@gmail.com"
-                }
-            ],
-            "description": "Google Cloud Client Library",
-            "homepage": "http://github.com/GoogleCloudPlatform/google-cloud-php",
-            "keywords": [
-                "big query",
-                "bigquery",
-                "cloud",
-                "datastore",
-                "gcs",
-                "google",
-                "google api",
-                "google api client",
-                "google apis",
-                "google apis client",
-                "google cloud",
-                "google cloud platform",
-                "language",
-                "natural language",
-                "pub sub",
-                "pubsub",
-                "spanner",
-                "speech",
-                "stackdriver logging",
-                "storage",
-                "translate",
-                "translation",
-                "vision"
-            ],
-            "time": "2017-07-07T21:36:56+00:00"
+            "time": "2018-09-17T20:29:21+00:00"
         },
         {
             "name": "google/cloud-core",
-            "version": "v1.20.6",
+            "version": "v1.23.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/GoogleCloudPlatform/google-cloud-php-core.git",
-                "reference": "bdef5b4e70ceb537e924b1e72a4cc423ef50bd08"
+                "url": "https://github.com/googleapis/google-cloud-php-core.git",
+                "reference": "f0f1d929285a43359bf65bec0135ce4c8d0d0503"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php-core/zipball/bdef5b4e70ceb537e924b1e72a4cc423ef50bd08",
-                "reference": "bdef5b4e70ceb537e924b1e72a4cc423ef50bd08",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/f0f1d929285a43359bf65bec0135ce4c8d0d0503",
+                "reference": "f0f1d929285a43359bf65bec0135ce4c8d0d0503",
                 "shasum": ""
             },
             "require": {
@@ -358,7 +255,7 @@
             },
             "require-dev": {
                 "erusev/parsedown": "^1.6",
-                "google/gax": "^0.33",
+                "google/gax": "^0.37",
                 "opis/closure": "^3",
                 "phpdocumentor/reflection": "^3.0",
                 "phpunit/phpunit": "^4.8|^5.0",
@@ -375,7 +272,7 @@
             "extra": {
                 "component": {
                     "id": "cloud-core",
-                    "target": "GoogleCloudPlatform/google-cloud-php-core.git",
+                    "target": "googleapis/google-cloud-php-core.git",
                     "path": "Core",
                     "entry": "src/ServiceBuilder.php"
                 }
@@ -390,28 +287,28 @@
                 "Apache-2.0"
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
-            "time": "2018-06-27T19:44:01+00:00"
+            "time": "2018-10-08T13:57:02+00:00"
         },
         {
             "name": "google/cloud-error-reporting",
-            "version": "v0.11.0",
+            "version": "v0.11.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/GoogleCloudPlatform/google-cloud-php-errorreporting.git",
-                "reference": "2ede5097e6e8b271354999b24869f538c44a2f96"
+                "url": "https://github.com/googleapis/google-cloud-php-errorreporting.git",
+                "reference": "6987a21847c6711172800f359398b2db83c7a3f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php-errorreporting/zipball/2ede5097e6e8b271354999b24869f538c44a2f96",
-                "reference": "2ede5097e6e8b271354999b24869f538c44a2f96",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-errorreporting/zipball/6987a21847c6711172800f359398b2db83c7a3f5",
+                "reference": "6987a21847c6711172800f359398b2db83c7a3f5",
                 "shasum": ""
             },
             "require": {
                 "google/cloud-logging": "^1.5.0",
-                "google/gax": "^0.34"
+                "google/gax": "^0.37"
             },
             "require-dev": {
-                "google/cloud-core": "^1.14",
+                "google/cloud-core": "^1.23",
                 "phpdocumentor/reflection": "^3.0",
                 "phpunit/phpunit": "^4.8|^5.0"
             },
@@ -439,25 +336,25 @@
                 "Apache-2.0"
             ],
             "description": "Stackdriver Error Reporting Client for PHP",
-            "time": "2018-06-12T16:51:43+00:00"
+            "time": "2018-08-30T15:45:55+00:00"
         },
         {
             "name": "google/cloud-logging",
-            "version": "v1.12.2",
+            "version": "v1.13.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/GoogleCloudPlatform/google-cloud-php-logging.git",
-                "reference": "36f73aec1e83d742bcf78a3c68ba7522986f25ed"
+                "url": "https://github.com/googleapis/google-cloud-php-logging.git",
+                "reference": "7799e6dc92a7cf68f74935c2600d17cb46043fbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php-logging/zipball/36f73aec1e83d742bcf78a3c68ba7522986f25ed",
-                "reference": "36f73aec1e83d742bcf78a3c68ba7522986f25ed",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-logging/zipball/7799e6dc92a7cf68f74935c2600d17cb46043fbb",
+                "reference": "7799e6dc92a7cf68f74935c2600d17cb46043fbb",
                 "shasum": ""
             },
             "require": {
-                "google/cloud-core": "^1.14",
-                "google/gax": "^0.34"
+                "google/cloud-core": "^1.23",
+                "google/gax": "^0.37"
             },
             "require-dev": {
                 "erusev/parsedown": "^1.6",
@@ -477,7 +374,7 @@
             "extra": {
                 "component": {
                     "id": "cloud-logging",
-                    "target": "GoogleCloudPlatform/google-cloud-php-logging.git",
+                    "target": "googleapis/google-cloud-php-logging.git",
                     "path": "Logging",
                     "entry": "src/LoggingClient.php"
                 }
@@ -493,24 +390,75 @@
                 "Apache-2.0"
             ],
             "description": "Stackdriver Logging Client for PHP",
-            "time": "2018-06-27T19:44:01+00:00"
+            "time": "2018-10-01T14:07:51+00:00"
         },
         {
-            "name": "google/gax",
-            "version": "0.34.0",
+            "name": "google/cloud-storage",
+            "version": "v1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/googleapis/gax-php.git",
-                "reference": "faddb0bd14e63b2470fd71d5a66cf6a1416c6717"
+                "url": "https://github.com/googleapis/google-cloud-php-storage.git",
+                "reference": "3db9ba4fa8ac8749781c4ace05142375588ea75a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/faddb0bd14e63b2470fd71d5a66cf6a1416c6717",
-                "reference": "faddb0bd14e63b2470fd71d5a66cf6a1416c6717",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-storage/zipball/3db9ba4fa8ac8749781c4ace05142375588ea75a",
+                "reference": "3db9ba4fa8ac8749781c4ace05142375588ea75a",
+                "shasum": ""
+            },
+            "require": {
+                "google/cloud-core": "^1.23"
+            },
+            "require-dev": {
+                "erusev/parsedown": "^1.6",
+                "google/cloud-pubsub": "^1.0",
+                "phpdocumentor/reflection": "^3.0",
+                "phpseclib/phpseclib": "^2",
+                "phpunit/phpunit": "^4.8|^5.0",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "suggest": {
+                "google/cloud-pubsub": "May be used to register a topic to receive bucket notifications.",
+                "phpseclib/phpseclib": "May be used in place of OpenSSL for creating signed Cloud Storage URLs. Please require version ^2."
+            },
+            "type": "library",
+            "extra": {
+                "component": {
+                    "id": "cloud-storage",
+                    "target": "googleapis/google-cloud-php-storage.git",
+                    "path": "Storage",
+                    "entry": "src/StorageClient.php"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Google\\Cloud\\Storage\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Cloud Storage Client for PHP",
+            "time": "2018-10-08T13:57:02+00:00"
+        },
+        {
+            "name": "google/gax",
+            "version": "0.37.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/gax-php.git",
+                "reference": "2d8b9103f1be3e3ababd8a733beae705d563edf5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/2d8b9103f1be3e3ababd8a733beae705d563edf5",
+                "reference": "2d8b9103f1be3e3ababd8a733beae705d563edf5",
                 "shasum": ""
             },
             "require": {
                 "google/auth": "^1.2.0",
+                "google/grpc-gcp": "^0.1.0",
                 "google/protobuf": "^3.5.1",
                 "grpc/grpc": "^1.4",
                 "guzzlehttp/promises": "^1.3",
@@ -520,7 +468,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^4.8.36",
                 "sami/sami": "*",
-                "squizlabs/php_codesniffer": "2.*"
+                "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
             "autoload": {
@@ -545,20 +493,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-06-08T22:24:35+00:00"
+            "time": "2018-08-20T19:05:50+00:00"
         },
         {
             "name": "google/google-cloud-storage-wordpress-plugin",
-            "version": "1.3.5",
+            "version": "1.4.0",
             "dist": {
                 "type": "tar",
-                "url": "https://packages.svbk.it/dist/google/google-cloud-storage-wordpress-plugin/google-google-cloud-storage-wordpress-plugin-9179d15faebbe8e053f9cedb433d302d1d317f51-path.tar",
+                "url": "https://packages.svbk.it/dist/google/google-cloud-storage-wordpress-plugin/google-google-cloud-storage-wordpress-plugin-41141ea942390e3b7ce6623f944ba46a85f4ef9e-path.tar",
                 "reference": null,
-                "shasum": "66f47b241540e31b24ec7bc6aee41b583879017c"
+                "shasum": "791df694ab3105cafa7b33ab29fcc874f571b137"
             },
             "require": {
                 "composer/installers": "^1.2.0",
-                "google/cloud": "~0.24",
+                "google/cloud-storage": "^1.7",
                 "php": ">=5.6"
             },
             "type": "wordpress-plugin",
@@ -570,17 +518,56 @@
             "description": "A plugin for uploading media files to Google Cloud Storage."
         },
         {
-            "name": "google/protobuf",
-            "version": "v3.6.0.1",
+            "name": "google/grpc-gcp",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/google/protobuf.git",
-                "reference": "ce044817c7ba0aea27c3fd8e496635d94d20a755"
+                "url": "https://github.com/GoogleCloudPlatform/grpc-gcp-php.git",
+                "reference": "639570df7d84ccda4e3da27cd57c6fcebe1fe5da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/protobuf/zipball/ce044817c7ba0aea27c3fd8e496635d94d20a755",
-                "reference": "ce044817c7ba0aea27c3fd8e496635d94d20a755",
+                "url": "https://api.github.com/repos/GoogleCloudPlatform/grpc-gcp-php/zipball/639570df7d84ccda4e3da27cd57c6fcebe1fe5da",
+                "reference": "639570df7d84ccda4e3da27cd57c6fcebe1fe5da",
+                "shasum": ""
+            },
+            "require": {
+                "google/auth": "^1.3",
+                "google/protobuf": "^v3.3.0",
+                "grpc/grpc": "^v1.13.0",
+                "php": ">=5.5.0",
+                "psr/cache": "^1.0.1"
+            },
+            "require-dev": {
+                "google/cloud-spanner": "^1.7",
+                "phpunit/phpunit": "4.8.36"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Grpc\\Gcp\\": "src/",
+                    "": "src/generated/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "gRPC GCP library for channel management",
+            "time": "2018-09-06T20:31:40+00:00"
+        },
+        {
+            "name": "google/protobuf",
+            "version": "v3.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/protobuf.git",
+                "reference": "48cb18e5c419ddd23d9badcfe4e9df7bde1979b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/protobuf/zipball/48cb18e5c419ddd23d9badcfe4e9df7bde1979b2",
+                "reference": "48cb18e5c419ddd23d9badcfe4e9df7bde1979b2",
                 "shasum": ""
             },
             "require": {
@@ -608,27 +595,27 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2018-06-08T01:16:44+00:00"
+            "time": "2018-07-27T20:30:28+00:00"
         },
         {
             "name": "grpc/grpc",
-            "version": "1.12.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/grpc/grpc-php.git",
-                "reference": "ad3f6a2bb47475a32a7cdf23da3f67957e0e5aab"
+                "reference": "1a7cd0dc95a68594b8a8cfbf75ff236383172e2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/ad3f6a2bb47475a32a7cdf23da3f67957e0e5aab",
-                "reference": "ad3f6a2bb47475a32a7cdf23da3f67957e0e5aab",
+                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/1a7cd0dc95a68594b8a8cfbf75ff236383172e2f",
+                "reference": "1a7cd0dc95a68594b8a8cfbf75ff236383172e2f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "google/auth": "v0.9"
+                "google/auth": "^v1.3.0"
             },
             "suggest": {
                 "ext-protobuf": "For better performance, install the protobuf C extension.",
@@ -649,7 +636,7 @@
             "keywords": [
                 "rpc"
             ],
-            "time": "2018-05-15T22:09:16+00:00"
+            "time": "2018-09-12T21:49:56+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -834,20 +821,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.9.6",
+            "version": "4.9.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "ecca35c283591e3f40732522334415521f5aa4b7"
+                "reference": "de02cd79a41e06f36558040724414197cb7f6246"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/ecca35c283591e3f40732522334415521f5aa4b7",
-                "reference": "ecca35c283591e3f40732522334415521f5aa4b7",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/de02cd79a41e06f36558040724414197cb7f6246",
+                "reference": "de02cd79a41e06f36558040724414197cb7f6246",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "4.9.6",
+                "johnpbloch/wordpress-core": "4.9.8",
                 "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.3.2"
             },
@@ -869,27 +856,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-05-17T20:03:03+00:00"
+            "time": "2018-08-02T21:48:39+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.9.6",
+            "version": "4.9.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "6ff81eb3d93d326b78a8bc0f120e72c161ec58c8"
+                "reference": "50323f9b91d7689d615b4af02caf9d80584b1cfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/6ff81eb3d93d326b78a8bc0f120e72c161ec58c8",
-                "reference": "6ff81eb3d93d326b78a8bc0f120e72c161ec58c8",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/50323f9b91d7689d615b4af02caf9d80584b1cfc",
+                "reference": "50323f9b91d7689d615b4af02caf9d80584b1cfc",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "4.9.6"
+                "wordpress/core-implementation": "4.9.8"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -909,7 +896,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-05-17T20:02:55+00:00"
+            "time": "2018-08-02T21:48:32+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -1081,55 +1068,6 @@
             "time": "2017-07-17T20:41:59+00:00"
         },
         {
-            "name": "paragonie/random_compat",
-            "version": "v2.0.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/10bcb46e8f3d365170f6de9d05245aa066b81f09",
-                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*|5.*"
-            },
-            "suggest": {
-                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "lib/random.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Paragon Initiative Enterprises",
-                    "email": "security@paragonie.com",
-                    "homepage": "https://paragonie.com"
-                }
-            ],
-            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
-            "keywords": [
-                "csprng",
-                "polyfill",
-                "pseudorandom",
-                "random"
-            ],
-            "time": "2018-06-08T15:26:40+00:00"
-        },
-        {
             "name": "psr/cache",
             "version": "1.0.1",
             "source": {
@@ -1273,86 +1211,6 @@
             "time": "2016-10-10T12:19:37+00:00"
         },
         {
-            "name": "ramsey/uuid",
-            "version": "3.7.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ramsey/uuid.git",
-                "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
-                "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
-                "shasum": ""
-            },
-            "require": {
-                "paragonie/random_compat": "^1.0|^2.0",
-                "php": "^5.4 || ^7.0"
-            },
-            "replace": {
-                "rhumsaa/uuid": "self.version"
-            },
-            "require-dev": {
-                "codeception/aspect-mock": "^1.0 | ~2.0.0",
-                "doctrine/annotations": "~1.2.0",
-                "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
-                "ircmaxell/random-lib": "^1.1",
-                "jakub-onderka/php-parallel-lint": "^0.9.0",
-                "mockery/mockery": "^0.9.9",
-                "moontoast/math": "^1.1",
-                "php-mock/php-mock-phpunit": "^0.3|^1.1",
-                "phpunit/phpunit": "^4.7|^5.0",
-                "squizlabs/php_codesniffer": "^2.3"
-            },
-            "suggest": {
-                "ext-libsodium": "Provides the PECL libsodium extension for use with the SodiumRandomGenerator",
-                "ext-uuid": "Provides the PECL UUID extension for use with the PeclUuidTimeGenerator and PeclUuidRandomGenerator",
-                "ircmaxell/random-lib": "Provides RandomLib for use with the RandomLibAdapter",
-                "moontoast/math": "Provides support for converting UUID to 128-bit integer (in string form).",
-                "ramsey/uuid-console": "A console application for generating UUIDs with ramsey/uuid",
-                "ramsey/uuid-doctrine": "Allows the use of Ramsey\\Uuid\\Uuid as Doctrine field type."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Ramsey\\Uuid\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Huizendveld",
-                    "email": "marijn.huizendveld@gmail.com"
-                },
-                {
-                    "name": "Thibaud Fabre",
-                    "email": "thibaud@aztech.io"
-                },
-                {
-                    "name": "Ben Ramsey",
-                    "email": "ben@benramsey.com",
-                    "homepage": "https://benramsey.com"
-                }
-            ],
-            "description": "Formerly rhumsaa/uuid. A PHP 5.4+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
-            "homepage": "https://github.com/ramsey/uuid",
-            "keywords": [
-                "guid",
-                "identifier",
-                "uuid"
-            ],
-            "time": "2018-01-20T00:28:24+00:00"
-        },
-        {
             "name": "rize/uri-template",
             "version": "0.3.2",
             "source": {
@@ -1491,17 +1349,17 @@
         },
         {
             "name": "silverbackstudio/wp-log",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverbackstudio/wp-log.git",
-                "reference": "54b56a6da56c51c89744647b76bf2051621b9941"
+                "reference": "0ab0522a20261c530966c5b4b82c881fc6433edf"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://packages.svbk.it/dist/silverbackstudio/wp-log/silverbackstudio-wp-log-54b56a6da56c51c89744647b76bf2051621b9941-zip-3999ae.tar",
-                "reference": "54b56a6da56c51c89744647b76bf2051621b9941",
-                "shasum": "65e9528bb23efbb55f91aa8275aa9838ddbc90ec"
+                "url": "https://packages.svbk.it/dist/silverbackstudio/wp-log/silverbackstudio-wp-log-0ab0522a20261c530966c5b4b82c881fc6433edf-zip-adad22.tar",
+                "reference": "0ab0522a20261c530966c5b4b82c881fc6433edf",
+                "shasum": "b140d162a866f043b0931dc2ae81d189d8815c3e"
             },
             "require": {
                 "google/cloud-logging": "^1.11",
@@ -1527,35 +1385,35 @@
                 }
             ],
             "support": {
-                "source": "https://github.com/silverbackstudio/wp-log/tree/1.0.1",
+                "source": "https://github.com/silverbackstudio/wp-log/tree/1.0.2",
                 "issues": "https://github.com/silverbackstudio/wp-log/issues"
             },
-            "time": "2018-06-14T07:15:43+00:00"
+            "time": "2018-07-09T12:05:30+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.4.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
+                "reference": "8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e",
+                "reference": "8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0"
+                "phpunit/phpunit": "^4.8.35 || ^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -1565,7 +1423,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause-Attribution"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -1580,19 +1438,19 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01T10:05:43+00:00"
+            "time": "2018-07-29T20:33:41+00:00"
         },
         {
             "name": "wpackagist-plugin/amp",
-            "version": "0.7.1",
+            "version": "0.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amp/",
-                "reference": "tags/0.7.1"
+                "reference": "tags/0.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amp.0.7.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/amp.0.7.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1604,15 +1462,15 @@
         },
         {
             "name": "wpackagist-plugin/html-editor-syntax-highlighter",
-            "version": "2.2.3",
+            "version": "2.2.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/html-editor-syntax-highlighter/",
-                "reference": "tags/2.2.3"
+                "reference": "tags/2.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/html-editor-syntax-highlighter.2.2.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/html-editor-syntax-highlighter.2.2.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1624,15 +1482,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "6.2.1",
+            "version": "6.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/6.2.1"
+                "reference": "tags/6.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.6.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.6.6.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1644,15 +1502,15 @@
         },
         {
             "name": "wpackagist-plugin/safe-svg",
-            "version": "1.6.1",
+            "version": "1.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/safe-svg/",
-                "reference": "tags/1.6.1"
+                "reference": "tags/1.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/safe-svg.1.6.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/safe-svg.1.7.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1704,15 +1562,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "7.6.1",
+            "version": "8.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/7.6.1"
+                "reference": "tags/8.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.7.6.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.8.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1726,16 +1584,16 @@
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.3.0",
+            "version": "3.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "d86873af43b4aa9d1f39a3601cc0cfcf02b25266"
+                "reference": "6ad28354c04b364c3c71a34e4a18b629cc3b231e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d86873af43b4aa9d1f39a3601cc0cfcf02b25266",
-                "reference": "d86873af43b4aa9d1f39a3601cc0cfcf02b25266",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/6ad28354c04b364c3c71a34e4a18b629cc3b231e",
+                "reference": "6ad28354c04b364c3c71a34e4a18b629cc3b231e",
                 "shasum": ""
             },
             "require": {
@@ -1773,7 +1631,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-06-06T23:58:19+00:00"
+            "time": "2018-09-23T23:08:17+00:00"
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
@@ -1797,15 +1655,15 @@
         },
         {
             "name": "wpackagist-plugin/loco-translate",
-            "version": "2.1.4",
+            "version": "2.1.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/loco-translate/",
-                "reference": "tags/2.1.4"
+                "reference": "tags/2.1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/loco-translate.2.1.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/loco-translate.2.1.5.zip",
                 "reference": null,
                 "shasum": null
             },
