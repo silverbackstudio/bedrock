@@ -107,6 +107,13 @@ if( env('DOMAIN_CURRENT_SITE')  ) {
     define( 'NOBLOGREDIRECT', env('NOBLOGREDIRECT') ?: WP_HOME );
 }
 
+//Helpers\Config::load( __DIR__ . '/iubenda.json',  'iubenda' );
+//Helpers\Config::load( __DIR__ . '/googlemaps.json',  'googlemaps' );
+
+if ( env( 'SENDINBLUE_APIKEY' ) ) {
+	SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey( 'api-key', env( 'SENDINBLUE_APIKEY' ) );
+}
+
 /**
  * Bootstrap WordPress
  */

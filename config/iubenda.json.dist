@@ -1,0 +1,19 @@
+{
+	"siteId": "00000001",
+	"cookiePolicyId": "00000001",
+	"privacyPolicyId": "000000001",    
+    "cookieSolution": {
+        "consentOnButton": false,
+        "consentOnScroll": false,		        
+		"lang": "",
+        "banner": {
+            "slideDown": false,
+            "applyStyles": false,            
+            "prependOnBody": false,
+            "textColor": "#dadada",
+            "backgroundColor": "#5A5A5A",
+            "cookiePolicyLinkCaption" : "Cookie Policy",
+            "content": ""
+        }
+    }
+}	
