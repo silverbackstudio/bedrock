@@ -45,8 +45,22 @@ if (file_exists($env_config)) {
 /**
  * URLs
  */
-define('WP_HOME', env('WP_HOME'));
-define('WP_SITEURL', env('WP_SITEURL'));
+
+// Determine HTTP or HTTPS, then set WP_SITEURL and WP_HOME
+if ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)) {
+    $protocol_to_use = 'https://';
+} else {
+    $protocol_to_use = 'http://';
+}
+
+if (isset($_SERVER['HTTP_HOST'])) {
+    define('HTTP_HOST', $_SERVER['HTTP_HOST']);
+} else {
+    define('HTTP_HOST', 'localhost');
+}
+
+define('WP_HOME', env('WP_HOME') ?: $protocol_to_use . HTTP_HOST);
+define('WP_SITEURL',  env('WP_SITEURL') ?: $protocol_to_use . HTTP_HOST . '/wp' );
 
 /**
  * Custom Content Directory

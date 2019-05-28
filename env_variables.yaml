@@ -1,0 +1,37 @@
+env_variables:
+    DB_NAME: ''
+    DB_USER: ''
+    DB_PASSWORD: ''
+    
+    # Optional variables
+    DB_HOST: ':/cloudsql/project:region:instance'
+    DB_PREFIX: 'wp_'
+    
+    WP_HOME: ''
+    WP_SITEURL: ''
+        
+    WP_ENV: 'production'
+    
+    # Generate your keys here: https://roots.io/salts.html
+    AUTH_KEY: ''
+    SECURE_AUTH_KEY: ''
+    LOGGED_IN_KEY: ''
+    NONCE_KEY: ''
+    AUTH_SALT: ''
+    SECURE_AUTH_SALT: ''
+    LOGGED_IN_SALT: ''
+    NONCE_SALT: ''
+    
+    # Disable WP Cron
+    DISABLE_WP_CRON: true
+    
+    # Set default recipient email
+    RECIPIENT_EMAIL: 'webmaster@silverbackstudio.it'
+    
+    # Set this to enable multisite setup
+    WP_ALLOW_MULTISITE: ''
+    
+    # Set this to enable multisite
+    DOMAIN_CURRENT_SITE: ''
+    
+    SENDINBLUE_APIKEY: ''

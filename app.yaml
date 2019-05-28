@@ -1,0 +1,23 @@
+# App Engine runtime configuration
+runtime: php72
+instance_class: F1
+
+# Defaults to "serve index.php" and "serve public/index.php". Can be used to
+# serve a custom PHP front controller (e.g. "serve backend/index.php") or to
+# run a long-running PHP script as a worker process (e.g. "php worker.php").
+entrypoint: serve web/gae-app.php
+
+automatic_scaling:
+  target_cpu_utilization: 0.9
+  max_concurrent_requests: 5
+  target_throughput_utilization: 0.8 # multiply to max_concurrent_requests, if waiting requests are more a new instance will be spawned  
+  min_instances: 0
+  max_instances: 10
+  max_pending_latency: 150ms # if requests wait more to be served, a new instance will be spawned
+  min_pending_latency: 100ms # if requests can be served in less time, an instance will be shut down
+  min_idle_instances: 0
+  max_idle_instances: 1
+
+includes:
+  - env_variables.yaml
+  - handlers.yaml

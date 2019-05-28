@@ -1,0 +1,31 @@
+# Defines static handlers to serve WordPress assets
+handlers:
+- url: /(.*\.(htm|html))
+  static_files: web/\1
+  upload: web/.*\.(htm|html)$
+  
+- url: /(.*\.js)
+  static_files: web/\1
+  upload: web/.*\.js$  
+  mime_type: application/javascript
+  
+- url: /(.*\.css)
+  static_files: web/\1
+  upload: web/.*\.css$    
+  mime_type: text/css
+
+- url: /app/(.*\.(ico|jpg|jpeg|png|gif|webp|woff|ttf|otf|eot|svg))
+  static_files: web/app/\1
+  upload: web/app/.*\.(ico|jpg|jpeg|png|gif|webp|woff|ttf|otf|eot|svg)$
+  http_headers:
+    Access-Control-Allow-Origin: '*'
+
+- url: /(.*\.(ico|jpg|jpeg|png|gif|webp|woff|ttf|otf|eot|svg))
+  static_files: web/\1
+  upload: web/.*\.(ico|jpg|jpeg|png|gif|webp|woff|ttf|otf|eot|svg)$
+  http_headers:
+    Access-Control-Allow-Origin: '*'
+
+- url: /wp/wp-includes/images/media/(.*\.(ico|jpg|jpeg|png|gif|webp|woff|ttf|otf|eot|svg))
+  static_files: web/app/wp/wp-includes/images/media/\1
+  upload: web/app/wp/wp-includes/images/media/.*\.(ico|jpg|jpeg|png|gif|webp|woff|ttf|otf|eot|svg)$
