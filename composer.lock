@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "be4eff5e7015eb60149afc0779db7d0b",
@@ -225,16 +225,16 @@
         },
         {
             "name": "google/cloud-core",
-            "version": "v1.28.0",
+            "version": "v1.28.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-core.git",
-                "reference": "d32db261499d28268f9ed97834e7aca829df5b53"
+                "reference": "cec23ca6273ea8a455012eb6e12d526d5344e527"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/d32db261499d28268f9ed97834e7aca829df5b53",
-                "reference": "d32db261499d28268f9ed97834e7aca829df5b53",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/cec23ca6273ea8a455012eb6e12d526d5344e527",
+                "reference": "cec23ca6273ea8a455012eb6e12d526d5344e527",
                 "shasum": ""
             },
             "require": {
@@ -249,6 +249,7 @@
             },
             "require-dev": {
                 "erusev/parsedown": "^1.6",
+                "google/common-protos": "^1.0",
                 "google/gax": "^1.0",
                 "opis/closure": "^3",
                 "phpdocumentor/reflection": "^3.0",
@@ -281,20 +282,20 @@
                 "Apache-2.0"
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
-            "time": "2019-04-16T20:44:33+00:00"
+            "time": "2019-06-10T19:08:31+00:00"
         },
         {
             "name": "google/cloud-logging",
-            "version": "v1.16.4",
+            "version": "v1.16.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-logging.git",
-                "reference": "1cd2d74663e0fac3169202c0e0274608a5e6eca1"
+                "reference": "99bacc271da954b30918d21196ee6552a06880d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-logging/zipball/1cd2d74663e0fac3169202c0e0274608a5e6eca1",
-                "reference": "1cd2d74663e0fac3169202c0e0274608a5e6eca1",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-logging/zipball/99bacc271da954b30918d21196ee6552a06880d3",
+                "reference": "99bacc271da954b30918d21196ee6552a06880d3",
                 "shasum": ""
             },
             "require": {
@@ -335,20 +336,20 @@
                 "Apache-2.0"
             ],
             "description": "Stackdriver Logging Client for PHP",
-            "time": "2019-05-15T17:30:22+00:00"
+            "time": "2019-06-10T19:08:31+00:00"
         },
         {
             "name": "google/cloud-storage",
-            "version": "v1.12.1",
+            "version": "v1.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-storage.git",
-                "reference": "a252e2012ea875e873b6d146159e54edb8fa4544"
+                "reference": "560d95f0fced07892b6a7dfd7bb690accb86f9c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-storage/zipball/a252e2012ea875e873b6d146159e54edb8fa4544",
-                "reference": "a252e2012ea875e873b6d146159e54edb8fa4544",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-storage/zipball/560d95f0fced07892b6a7dfd7bb690accb86f9c2",
+                "reference": "560d95f0fced07892b6a7dfd7bb690accb86f9c2",
                 "shasum": ""
             },
             "require": {
@@ -385,7 +386,7 @@
                 "Apache-2.0"
             ],
             "description": "Cloud Storage Client for PHP",
-            "time": "2019-05-02T16:40:15+00:00"
+            "time": "2019-06-03T20:07:05+00:00"
         },
         {
             "name": "google/common-protos",
@@ -428,16 +429,16 @@
         },
         {
             "name": "google/gax",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/gax-php.git",
-                "reference": "48387fb818c6882296710a2302a0aa973b99afb2"
+                "reference": "0877185cbf4bc7648685a25f466fec8e531d0370"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/48387fb818c6882296710a2302a0aa973b99afb2",
-                "reference": "48387fb818c6882296710a2302a0aa973b99afb2",
+                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/0877185cbf4bc7648685a25f466fec8e531d0370",
+                "reference": "0877185cbf4bc7648685a25f466fec8e531d0370",
                 "shasum": ""
             },
             "require": {
@@ -474,7 +475,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-04-23T22:57:39+00:00"
+            "time": "2019-06-25T18:06:46+00:00"
         },
         {
             "name": "google/google-cloud-storage-wordpress-plugin",
@@ -482,7 +483,6 @@
             "dist": {
                 "type": "tar",
                 "url": "https://packages.svbk.it/dist/google/google-cloud-storage-wordpress-plugin/google-google-cloud-storage-wordpress-plugin-778242c8fbc812f614bbcb1d2a87432554c670b0-path.tar",
-                "reference": null,
                 "shasum": "dab9b381d8246cc588e7a2067477a4232701e696"
             },
             "require": {
@@ -539,16 +539,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.7.1",
+            "version": "v3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "0657d28864692480c3d8506ba4fc90e8813deae5"
+                "reference": "a257235dc1a0d45f8cfc641d0c2ad852f57396c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/0657d28864692480c3d8506ba4fc90e8813deae5",
-                "reference": "0657d28864692480c3d8506ba4fc90e8813deae5",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/a257235dc1a0d45f8cfc641d0c2ad852f57396c4",
+                "reference": "a257235dc1a0d45f8cfc641d0c2ad852f57396c4",
                 "shasum": ""
             },
             "require": {
@@ -576,7 +576,7 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2019-03-26T18:06:41+00:00"
+            "time": "2019-05-29T00:06:29+00:00"
         },
         {
             "name": "grpc/grpc",
@@ -804,22 +804,22 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.2.1",
+            "version": "5.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "32750c64c9d1878a7c958094554644de63030323"
+                "reference": "597236f0e4126ef92611b904725fd4e60afdc1ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/32750c64c9d1878a7c958094554644de63030323",
-                "reference": "32750c64c9d1878a7c958094554644de63030323",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/597236f0e4126ef92611b904725fd4e60afdc1ac",
+                "reference": "597236f0e4126ef92611b904725fd4e60afdc1ac",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.2.1",
+                "johnpbloch/wordpress-core": "5.2.2",
                 "johnpbloch/wordpress-core-installer": "^1.0",
-                "php": ">=5.6.20"
+                "php": ">=5.3.2"
             },
             "type": "package",
             "notification-url": "https://packagist.org/downloads/",
@@ -839,27 +839,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-05-22T17:56:53+00:00"
+            "time": "2019-06-18T17:58:03+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.2.1",
+            "version": "5.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "7555561027211f295e1d6a77d06ab47f605608cd"
+                "reference": "bbded8adf0ddd8cafdbd6e6605e0ee82d5c1dc8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/7555561027211f295e1d6a77d06ab47f605608cd",
-                "reference": "7555561027211f295e1d6a77d06ab47f605608cd",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/bbded8adf0ddd8cafdbd6e6605e0ee82d5c1dc8a",
+                "reference": "bbded8adf0ddd8cafdbd6e6605e0ee82d5c1dc8a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "5.2.1"
+                "wordpress/core-implementation": "5.2.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -879,7 +879,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-05-21T18:27:33+00:00"
+            "time": "2019-06-18T17:57:57+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -1531,17 +1531,15 @@
         },
         {
             "name": "wpackagist-plugin/amp",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amp/",
-                "reference": "tags/1.1.1"
+                "reference": "tags/1.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amp.1.1.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/amp.1.2.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1551,17 +1549,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "7.3.1.1",
+            "version": "7.4.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/7.3.1.1"
+                "reference": "tags/7.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.7.3.1.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/jetpack.7.4.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1579,9 +1575,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/safe-svg.1.9.4.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/safe-svg.1.9.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1599,9 +1593,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.6.3.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.6.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1611,17 +1603,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "11.3",
+            "version": "11.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/11.3"
+                "reference": "tags/11.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.11.3.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.11.5.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1692,9 +1682,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.6.2.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.6.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1704,17 +1692,15 @@
         },
         {
             "name": "wpackagist-plugin/loco-translate",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/loco-translate/",
-                "reference": "tags/2.2.2"
+                "reference": "tags/2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/loco-translate.2.2.2.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/loco-translate.2.3.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"

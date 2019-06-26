@@ -28,9 +28,10 @@ db-sync
 # Node Package Manager
 node_modules/*
 
-# Vagrant
+# Dev Tools
 bin
 .vagrant
+.devcontainer/dbdata
 
 #Logs
 *.log
