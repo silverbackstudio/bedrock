@@ -65,12 +65,19 @@ RUN { \
 		echo 'html_errors = Off'; \
 	} > /usr/local/etc/php/conf.d/error-logging.ini
 
-RUN a2enmod rewrite expires
+RUN a2enmod rewrite expires ssl
+RUN a2ensite default-ssl
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
-ENV APACHE_DOCUMENT_ROOT /var/www/html/web
+# Change Apache Root Folder
 RUN sed -ri -e 's!/var/www/html!/var/www/html/web!g' /etc/apache2/sites-available/*.conf
+
+# Change Apache HTTP ports to avoid the needs to be root
+RUN sed -ri -e 's!<VirtualHost \*:80>!<VirtualHost *:8080>!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!Listen 80!Listen 8080!g' /etc/apache2/ports.conf 
+RUN sed -ri -e 's!<VirtualHost _default_:443>!<VirtualHost _default_:8443>!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!Listen 443!Listen 8443!g' /etc/apache2/ports.conf 
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -85,6 +92,13 @@ RUN apt-get install -y sudo \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
 RUN apt-get -y install git procps lsb-release dialog unzip nano
+
+# Install Google Cloud SDK
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
+	&& apt-get -y install apt-transport-https ca-certificates gnupg \
+	&& curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - \
+	&& apt-get update \ 
+	&& apt-get -y install google-cloud-sdk 
 
 # Clean up
 RUN apt-get autoremove -y \
