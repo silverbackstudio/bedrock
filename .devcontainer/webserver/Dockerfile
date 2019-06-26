@@ -66,7 +66,6 @@ RUN { \
 	} > /usr/local/etc/php/conf.d/error-logging.ini
 
 RUN a2enmod rewrite expires ssl
-RUN a2ensite default-ssl
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
