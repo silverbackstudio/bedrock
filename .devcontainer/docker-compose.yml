@@ -1,0 +1,46 @@
+version: "3.7"
+services:
+  webserver:
+    build:
+      context: './webserver/'
+    ports:
+      - 8080:80
+    depends_on:
+      - db      
+    networks:
+      - frontend
+      - backend
+    volumes:
+      - "..:/var/www/html:cached"
+      - "~/.gitconfig:/home/developer/.gitconfig:ro"
+    environment:
+      DB_HOST: db:3306
+      DB_USER: wordpress
+      DB_PASSWORD_FILE: /run/secrets/db_password
+      APACHE_WORKING_DIR: /var/www/html/web/
+    secrets:
+      - db_password
+    command: sleep infinity
+  db:  
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - "./dbdata:/var/lib/mysql:delegated"
+    networks:
+      - backend
+    environment:
+       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_root_password
+      - db_password          
+networks:
+  frontend:
+  backend:
+secrets:
+   db_password:
+     file: db_password.txt
+   db_root_password:
+     file: db_root_password.txt  

@@ -82,10 +82,7 @@
     },
     "wordpress-install-dir": "web/wp"
   },
-  "scripts": {
-    "pre-update-cmd": [
-      "git config --global credential.'https://source.developers.google.com'.helper gcloud.sh"
-    ],       
+  "scripts": {      
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
     ],

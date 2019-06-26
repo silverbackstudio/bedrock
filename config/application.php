@@ -54,12 +54,15 @@ define('WP_SITEURL', env('WP_SITEURL'));
 define('CONTENT_DIR', '/app');
 define('WP_CONTENT_DIR', $webroot_dir . CONTENT_DIR);
 define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
+
+
+
 /**
  * DB settings
  */
 define('DB_NAME', env('DB_NAME'));
 define('DB_USER', env('DB_USER'));
-define('DB_PASSWORD', env('DB_PASSWORD'));
+define('DB_PASSWORD', env('DB_PASSWORD_FILE') ? file_get_contents( env('DB_PASSWORD_FILE') ) : env('DB_PASSWORD') );
 define('DB_HOST', env('DB_HOST') ?: 'localhost');
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
