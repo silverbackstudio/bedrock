@@ -4,7 +4,8 @@ services:
     build:
       context: './webserver/'
     ports:
-      - 8080:80
+      - 8080:8080
+      - 443:8443
     depends_on:
       - db      
     networks:
@@ -20,7 +21,6 @@ services:
       APACHE_WORKING_DIR: /var/www/html/web/
     secrets:
       - db_password
-    command: sleep infinity
   db:  
     image: mysql:5.7
     restart: always
