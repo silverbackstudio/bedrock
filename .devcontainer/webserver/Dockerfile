@@ -79,6 +79,7 @@ RUN sed -ri -e 's!<VirtualHost _default_:443>!<VirtualHost _default_:8443>!g' /e
 RUN sed -ri -e 's!Listen 443!Listen 8443!g' /etc/apache2/ports.conf 
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=wordpress:cli-php7.2 /usr/local/bin/wp /usr/local/bin/wp
 
 # Configure new user
 ARG USERNAME=developer
