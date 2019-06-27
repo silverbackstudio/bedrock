@@ -90,7 +90,11 @@ RUN apt-get install -y sudo \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
-RUN apt-get -y install git procps lsb-release dialog unzip nano
+RUN apt-get -y install git procps lsb-release dialog unzip nano mysql-client
+
+# Install NodeJS 8
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+	&& apt-get install -y nodejs
 
 # Install Google Cloud SDK
 RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
