@@ -12,6 +12,11 @@ In you want to launch `gcloud` commands from the container with the same user of
 ```
 mklink /J gcloud %USERPROFILE%\AppData\Roaming\gcloud
 ```
+If you need to use Google Cloud Repositories you should also patch the `~/.gitconfig` file on host machine (cmd) to use the Unix-style `.gitcookie` path:
+```
+git config --global http.cookiefile ~/.gitcookies
+```
+
 
 ## Configuration
 

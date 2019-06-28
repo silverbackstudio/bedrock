@@ -14,6 +14,7 @@ services:
     volumes:
       - "..:/var/www/html:cached"
       - "~/.gitconfig:/home/developer/.gitconfig:ro"
+      - "~/.gitcookies:/home/developer/.gitcookies:ro"      
       - "~/.config/gcloud:/home/developer/.config/gcloud"
     environment:
       DB_HOST: db:3306
