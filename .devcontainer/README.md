@@ -35,3 +35,9 @@ After the images are successfully build, the website is available at [http://loc
 After the first boot of the dev containers, the MySQL database is initialized and saved in the `.devcontainer/dbdata`. The DB data folder is always mounted from the host and will persist every subsequent container restart. To reset the database you can delete the `dbdata` folder and a fresh DB will be created.
 
 If you need to change any of the configuration parameters or env variables you need to rebuild the containers via the Command Palette: `Remote-Containers: Rebuild Container`.
+
+If your dev team is using Windows and Unix environments, git will mess up file permissions. To fix this behavior you can disable the git file permission analysis via:
+```
+git config core.filemode false
+```
+for the current directory, if you want to always disable it by default use the `--global` flag.
