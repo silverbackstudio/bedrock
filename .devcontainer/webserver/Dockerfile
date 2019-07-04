@@ -65,9 +65,29 @@ RUN { \
 		echo 'html_errors = Off'; \
 	} > /usr/local/etc/php/conf.d/error-logging.ini
 
-RUN a2enmod rewrite expires ssl
+# Install required packages and tools
+RUN apt-get -y install git procps lsb-release dialog unzip nano mysql-client ssl-cert
 
+# Install NodeJS 8
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+	&& apt-get install -y nodejs
+
+# Install Google Cloud SDK
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" |  tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
+	&& apt-get -y install apt-transport-https ca-certificates gnupg \
+	&& curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - \
+	&& apt-get update \ 
+	&& apt-get -y install google-cloud-sdk 
+
+# Install composer and wp-cli from factoery images
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=wordpress:cli-php7.2 /usr/local/bin/wp /usr/local/bin/wp
+
+# Setup PHP as development environment
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+
+# Enable required Apache Modules
+RUN a2enmod rewrite expires headers
 
 # Change Apache Root Folder
 RUN sed -ri -e 's!/var/www/html!/var/www/html/web!g' /etc/apache2/sites-available/*.conf
@@ -78,8 +98,12 @@ RUN sed -ri -e 's!Listen 80!Listen 8080!g' /etc/apache2/ports.conf
 RUN sed -ri -e 's!<VirtualHost _default_:443>!<VirtualHost _default_:8443>!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!Listen 443!Listen 8443!g' /etc/apache2/ports.conf 
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-COPY --from=wordpress:cli-php7.2 /usr/local/bin/wp /usr/local/bin/wp
+# Enable Apache SSL
+RUN a2enmod ssl
+RUN a2ensite default-ssl
+# Apache boots as unprivileged user, snakeoil cert key file need to readable. 
+RUN chmod 755 /etc/ssl/private
+RUN chmod 644 /etc/ssl/private/ssl-cert-snakeoil.key
 
 # Configure new user
 ARG USERNAME=developer
@@ -90,19 +114,6 @@ ENV HOME /home/$USERNAME
 RUN apt-get install -y sudo \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
-
-RUN apt-get -y install git procps lsb-release dialog unzip nano mysql-client
-
-# Install NodeJS 8
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-	&& apt-get install -y nodejs
-
-# Install Google Cloud SDK
-RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
-	&& apt-get -y install apt-transport-https ca-certificates gnupg \
-	&& curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - \
-	&& apt-get update \ 
-	&& apt-get -y install google-cloud-sdk 
 
 # Clean up
 RUN apt-get autoremove -y \
