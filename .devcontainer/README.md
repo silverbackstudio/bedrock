@@ -39,15 +39,19 @@ If you nee to use a custom domain or you are in a WP multisite install, you can 
 ```
 The website is now reachable via that domains but you need to replace all the occurrences of `https://localhost` in `.devcontainer/docker-compose.yml` and restart the container. 
 
+*Warning: the `.dev` TLD preloads with HTST enabled by most browsers, you need a valid certificate for all its subdomains. Better to use something else.*
+
 ### Multisite
 
 If you are in a multisite you also need to update the `DOMAIN_CURRENT_SITE` in your `wp-config.php` file and the DB via this command:
 ```
-wp search-replace '[your-old-site-domain]' 'mywebsite.test' --all-tables && wp site list
+wp search-replace '[your-old-site-domain]' 'mywebsite.test' --all-tables
 ```
-it should output the updated sites list that you can configure in the `hosts` file as described in the previous paragraph.
+You can use this command in the host machine to get the preformatted list to be appended to your `hosts` file:
 
-Warning: the `.dev` TLD preloads with HTST enabled so you need a valid certificate fo all it's subdomains. Better to use something else.
+```
+docker exec [container-name] sh -c "wp site list --fields=url --format=csv | sed -E 's|https?://([^/]*)/(.*)$|127.0.0.1 \1|g' | sed -E s/^url$//"
+```
 
 ## Additional Info
 
