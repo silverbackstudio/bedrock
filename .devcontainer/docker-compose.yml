@@ -4,7 +4,7 @@ services:
     build:
       context: './webserver/'
     ports:
-      - 8080:8080
+      - 80:8080
       - 443:8443
     depends_on:
       - db      
@@ -23,8 +23,8 @@ services:
       DB_PREFIX: wp_
       DB_PASSWORD_FILE: /run/secrets/db_password
       WP_ENV: development
-      WP_HOME: http://localhost:8080
-      WP_SITEURL: http://localhost:8080/wp
+      WP_HOME: https://localhost
+      WP_SITEURL: https://localhost/wp
       APACHE_WORKING_DIR: /var/www/html/web/
       APACHE_HTTP_PORT: 8080
       APACHE_HTTPS_PORT: 8443

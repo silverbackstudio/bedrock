@@ -28,7 +28,26 @@ If you need to import a database on first env creation you can put multiple `.sq
 
 Open the project folder, the one containing the `.devcontainer` folder, with Visual Studio Code and click on the notification button: `Open Folder in Dev Container`. If you missed it you can open the VSC Command Palette `(F1/Shift+Cmd+P)` and search for `Remote-Containers: Reopen Folder in Container`.
 
-After the images are successfully build, the website is available at [http://localhost:8080](http://localhost:8080). The first time the environment is created takes a while to download and build all the necessary components.
+After the images are successfully build, the website is available at [https://localhost](https://localhost). The first time the environment is created takes a while to download and build all the necessary components.
+
+## Using Custom Domain
+
+If you nee to use a custom domain or you are in a WP multisite install, you can set up one or more aliases in your `hosts` file: 
+```
+127.0.0.1 mywebsite.test
+127.0.0.1 sub.mywebsite.test
+```
+The website is now reachable via that domains but you need to replace all the occurrences of `https://localhost` in `.devcontainer/docker-compose.yml` and restart the container. 
+
+### Multisite
+
+If you are in a multisite you also need to update the `DOMAIN_CURRENT_SITE` in your `wp-config.php` file and the DB via this command:
+```
+wp search-replace '[your-old-site-domain]' 'mywebsite.test' --all-tables && wp site list
+```
+it should output the updated sites list that you can configure in the `hosts` file as described in the previous paragraph.
+
+Warning: the `.dev` TLD preloads with HTST enabled so you need a valid certificate fo all it's subdomains. Better to use something else.
 
 ## Additional Info
 
