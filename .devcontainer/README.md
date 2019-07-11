@@ -50,7 +50,7 @@ wp search-replace '[your-old-site-domain]' 'mywebsite.test' --all-tables
 You can use this command in the host machine to get the preformatted list to be appended to your `hosts` file:
 
 ```
-docker exec [container-name] sh -c "wp site list --fields=url --format=csv | sed -E 's|https?://([^/]*)/(.*)$|127.0.0.1 \1|g' | sed -E s/^url$//"
+docker exec [container-name] sh -c "wp site list --field=url | sed -E 's|https?://([^/]*)/(.*)$|127.0.0.1 \1|g'"
 ```
 
 ## Additional Info
