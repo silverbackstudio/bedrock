@@ -23,7 +23,7 @@ function get_real_file_to_load($full_request_uri)
 
     // Prefix /wp/ to all Core URLs
     if ( preg_match( '/^(\/wp-(content|admin|includes).*)/i', $request_uri ) ) {
-        header('Location: ' . '/wp' . $request_uri );
+        header('Location: ' . '/wp' . $full_request_uri );
         exit;        
     }  
 
