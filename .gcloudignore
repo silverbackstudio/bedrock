@@ -6,11 +6,14 @@
 .history/
 .git
 .git/
+.devcontainer
+.devcontainer/
+.history
+.history/
 .svn
 .svn/
 .github
-.github
-
+.github/
 .appengine
 
 node_modules/
