@@ -9,4 +9,4 @@ define('DISALLOW_FILE_MODS', true);
 /**
  * Setup Log Handlers
  */
-Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\ErrorLogHandler() );
+Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\SyslogLogHandler() );
