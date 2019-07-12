@@ -7,7 +7,8 @@ define('SCRIPT_DEBUG', false);
 define('DISALLOW_FILE_MODS', true);
 define('JETPACK_STAGING_MODE', true);
 
+
 /**
  * Setup Log Handlers
  */
-Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\SyslogHandler() );
+Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\SyslogHandler('wordpress') );
