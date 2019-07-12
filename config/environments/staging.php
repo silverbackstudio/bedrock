@@ -7,18 +7,7 @@ define('SCRIPT_DEBUG', false);
 define('DISALLOW_FILE_MODS', true);
 define('JETPACK_STAGING_MODE', true);
 
-
 /**
  * Setup Log Handlers
  */
-$metadataProvider = new Google\Cloud\Core\Report\SimpleMetadataProvider([], '', 'website', '1.0');
-
-$loggingClient = new Google\Cloud\Logging\LoggingClient();
-$psrLogger = $loggingClient->psrLogger('wp-website', [
-    'batchEnabled' => true,
-    'metadataProvider' => $metadataProvider,
-]);
-
-Google\Cloud\ErrorReporting\Bootstrap::init($psrLogger); 
-
-Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\PsrHandler( $psrLogger ) );
+Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\SyslogHandler() );
