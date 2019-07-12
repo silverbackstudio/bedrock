@@ -21,4 +21,4 @@ $psrLogger = $loggingClient->psrLogger('wp-website', [
 
 Google\Cloud\ErrorReporting\Bootstrap::init($psrLogger); 
 
-Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\PsrHandler( $psrLogger ) );w
+Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\PsrHandler( $psrLogger ) );
