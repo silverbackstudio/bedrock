@@ -68,8 +68,8 @@ RUN { \
 # Install required packages and tools
 RUN apt-get -y install git procps lsb-release dialog unzip nano mysql-client ssl-cert
 
-# Install NodeJS 8
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+# Install NodeJS 10
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
 	&& apt-get install -y nodejs
 
 # Install Google Cloud SDK
@@ -78,6 +78,9 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.
 	&& curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - \
 	&& apt-get update \ 
 	&& apt-get -y install google-cloud-sdk 
+
+# Install Gulp NPM Package Globally
+RUN npm install -g gulp
 
 # Install composer and wp-cli from factoery images
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
