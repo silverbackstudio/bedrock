@@ -28,7 +28,9 @@ If you need to import a database on first env creation you can put multiple `.sq
 
 Open the project folder, the one containing the `.devcontainer` folder, with Visual Studio Code and click on the notification button: `Open Folder in Dev Container`. If you missed it you can open the VSC Command Palette `(F1/Shift+Cmd+P)` and search for `Remote-Containers: Reopen Folder in Container`.
 
-After the images are successfully build, the website is available at [https://localhost](https://localhost). The first time the environment is created takes a while to download and build all the necessary components.
+After the images are successfully build, the website is available at [https://localhost](https://localhost) or via the custom domain (see below). The first time the environment is created takes a while to download and build all the necessary components.
+
+*Remember: If it's the first time that you start the Dev Container, you probably should download dependencies and build the files via `composer` and/or `npm`*
 
 ## Using Custom Domain
 

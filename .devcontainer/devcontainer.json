@@ -6,7 +6,6 @@
 	// Uncomment the next line to automatically install extensions.
 	// "extensions": [],
 	"workspaceFolder": "/var/www/html",
-	"postCreateCommand": "/usr/bin/composer update --working-dir=/var/www/html",
 	//"runArgs": ["-u", "developer"]
 	"shutdownAction": "stopCompose"
 }
