@@ -122,7 +122,11 @@ if( env('DOMAIN_CURRENT_SITE')  ) {
     if( file_exists( CONTENT_DIR . '/sunrise.php' ) ) {
         define('SUNRISE', 'on' );
     }
-    
+
+    if ( env('COOKIE_DOMAIN') !== null ) {
+        define( 'COOKIE_DOMAIN', env('COOKIE_DOMAIN') );
+    }
+
     define( 'NOBLOGREDIRECT', env('NOBLOGREDIRECT') ?: WP_HOME );
 }
 
