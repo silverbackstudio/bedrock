@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be4eff5e7015eb60149afc0779db7d0b",
+    "content-hash": "413db0329006dc8dfca42cca319d2031",
     "packages": [
         {
             "name": "composer/installers",
@@ -159,13 +159,13 @@
             "authors": [
                 {
                     "name": "Neuman Vong",
-                    "email": "neuman+pear@twilio.com",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "neuman+pear@twilio.com"
                 },
                 {
                     "name": "Anant Narayanan",
-                    "email": "anant@php.net",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "anant@php.net"
                 }
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
@@ -225,16 +225,16 @@
         },
         {
             "name": "google/cloud-core",
-            "version": "v1.28.2",
+            "version": "v1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-core.git",
-                "reference": "cec23ca6273ea8a455012eb6e12d526d5344e527"
+                "reference": "a7b3a821be80a86a111b7a271886faf3226a277d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/cec23ca6273ea8a455012eb6e12d526d5344e527",
-                "reference": "cec23ca6273ea8a455012eb6e12d526d5344e527",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/a7b3a821be80a86a111b7a271886faf3226a277d",
+                "reference": "a7b3a821be80a86a111b7a271886faf3226a277d",
                 "shasum": ""
             },
             "require": {
@@ -282,6 +282,55 @@
                 "Apache-2.0"
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
+            "time": "2019-06-27T20:27:31+00:00"
+        },
+        {
+            "name": "google/cloud-error-reporting",
+            "version": "v0.14.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-cloud-php-errorreporting.git",
+                "reference": "f34699bc72fbe52101bf545fab9c0dc405b24483"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-errorreporting/zipball/f34699bc72fbe52101bf545fab9c0dc405b24483",
+                "reference": "f34699bc72fbe52101bf545fab9c0dc405b24483",
+                "shasum": ""
+            },
+            "require": {
+                "google/cloud-logging": "^1.16",
+                "google/gax": "^1.0"
+            },
+            "require-dev": {
+                "google/cloud-core": "^1.28",
+                "phpdocumentor/reflection": "^3.0",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "suggest": {
+                "ext-grpc": "The gRPC extension allows more granular control over Error Reporting",
+                "ext-protobuf": "Provides a significant increase in throughput over the pure PHP protobuf implementation. See https://cloud.google.com/php/grpc for installation instructions."
+            },
+            "type": "library",
+            "extra": {
+                "component": {
+                    "id": "cloud-error-reporting",
+                    "target": "googleapis/google-cloud-php-errorreporting.git",
+                    "path": "ErrorReporting",
+                    "entry": null
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Google\\Cloud\\ErrorReporting\\": "src",
+                    "GPBMetadata\\Google\\Devtools\\Clouderrorreporting\\": "metadata"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Stackdriver Error Reporting Client for PHP",
             "time": "2019-06-10T19:08:31+00:00"
         },
         {
@@ -340,16 +389,16 @@
         },
         {
             "name": "google/cloud-storage",
-            "version": "v1.12.2",
+            "version": "v1.12.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-storage.git",
-                "reference": "560d95f0fced07892b6a7dfd7bb690accb86f9c2"
+                "reference": "79cffd74f4a876e689b0c23248eb745c894f2e82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-storage/zipball/560d95f0fced07892b6a7dfd7bb690accb86f9c2",
-                "reference": "560d95f0fced07892b6a7dfd7bb690accb86f9c2",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-storage/zipball/79cffd74f4a876e689b0c23248eb745c894f2e82",
+                "reference": "79cffd74f4a876e689b0c23248eb745c894f2e82",
                 "shasum": ""
             },
             "require": {
@@ -386,7 +435,7 @@
                 "Apache-2.0"
             ],
             "description": "Cloud Storage Client for PHP",
-            "time": "2019-06-03T20:07:05+00:00"
+            "time": "2019-06-27T20:27:31+00:00"
         },
         {
             "name": "google/common-protos",
@@ -539,16 +588,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.8.0",
+            "version": "v3.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "a257235dc1a0d45f8cfc641d0c2ad852f57396c4"
+                "reference": "7b9ad7d4272ec45779bfa074efffd55586f1965c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/a257235dc1a0d45f8cfc641d0c2ad852f57396c4",
-                "reference": "a257235dc1a0d45f8cfc641d0c2ad852f57396c4",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/7b9ad7d4272ec45779bfa074efffd55586f1965c",
+                "reference": "7b9ad7d4272ec45779bfa074efffd55586f1965c",
                 "shasum": ""
             },
             "require": {
@@ -576,20 +625,20 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2019-05-29T00:06:29+00:00"
+            "time": "2019-07-12T00:17:38+00:00"
         },
         {
             "name": "grpc/grpc",
-            "version": "1.19.0",
+            "version": "1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/grpc/grpc-php.git",
-                "reference": "0f1ffdde45bfb9257c5d9eab81695d0f042bea22"
+                "reference": "88235e786ef9b55fcb049f00c5c5202f8086a299"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/0f1ffdde45bfb9257c5d9eab81695d0f042bea22",
-                "reference": "0f1ffdde45bfb9257c5d9eab81695d0f042bea22",
+                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/88235e786ef9b55fcb049f00c5c5202f8086a299",
+                "reference": "88235e786ef9b55fcb049f00c5c5202f8086a299",
                 "shasum": ""
             },
             "require": {
@@ -617,7 +666,7 @@
             "keywords": [
                 "rpc"
             ],
-            "time": "2019-02-27T04:47:56+00:00"
+            "time": "2019-07-03T19:57:39+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -737,33 +786,37 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.5.2",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "9f83dded91781a01c63574e387eaa769be769115"
+                "reference": "239400de7a173fe9901b9ac7c06497751f00727a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/9f83dded91781a01c63574e387eaa769be769115",
-                "reference": "9f83dded91781a01c63574e387eaa769be769115",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/239400de7a173fe9901b9ac7c06497751f00727a",
+                "reference": "239400de7a173fe9901b9ac7c06497751f00727a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0",
                 "psr/http-message": "~1.0",
-                "ralouphie/getallheaders": "^2.0.5"
+                "ralouphie/getallheaders": "^2.0.5 || ^3.0.0"
             },
             "provide": {
                 "psr/http-message-implementation": "1.0"
             },
             "require-dev": {
+                "ext-zlib": "*",
                 "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.8"
+            },
+            "suggest": {
+                "zendframework/zend-httphandlerrunner": "Emit PSR-7 responses"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -800,7 +853,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-12-04T20:46:45+00:00"
+            "time": "2019-07-01T23:21:34+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -1196,24 +1249,24 @@
         },
         {
             "name": "ralouphie/getallheaders",
-            "version": "2.0.5",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ralouphie/getallheaders.git",
-                "reference": "5601c8a83fbba7ef674a7369456d12f1e0d0eafa"
+                "reference": "120b605dfeb996808c31b6477290a714d356e822"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/5601c8a83fbba7ef674a7369456d12f1e0d0eafa",
-                "reference": "5601c8a83fbba7ef674a7369456d12f1e0d0eafa",
+                "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/120b605dfeb996808c31b6477290a714d356e822",
+                "reference": "120b605dfeb996808c31b6477290a714d356e822",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3"
+                "php": ">=5.6"
             },
             "require-dev": {
-                "phpunit/phpunit": "~3.7.0",
-                "satooshi/php-coveralls": ">=1.0"
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^5 || ^6.5"
             },
             "type": "library",
             "autoload": {
@@ -1232,7 +1285,7 @@
                 }
             ],
             "description": "A polyfill for getallheaders.",
-            "time": "2016-02-11T07:05:27+00:00"
+            "time": "2019-03-08T08:55:37+00:00"
         },
         {
             "name": "rize/uri-template",
@@ -1549,15 +1602,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "7.4.1",
+            "version": "7.5.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/7.4.1"
+                "reference": "tags/7.5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.7.4.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.7.5.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1603,15 +1656,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "11.5",
+            "version": "11.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/11.5"
+                "reference": "tags/11.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.11.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.11.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
