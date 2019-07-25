@@ -5,6 +5,9 @@ define('WP_DEBUG_DISPLAY', false);
 define('SCRIPT_DEBUG', false);
 /** Disable all file modifications including updates and update notifications */
 define('DISALLOW_FILE_MODS', true);
+/** Set the port for AppEngine internal reverse-proxy */
+define( 'JETPACK_SIGNATURE__HTTPS_PORT', 8080 );
+
 
 /**
  * Setup Log Handlers
