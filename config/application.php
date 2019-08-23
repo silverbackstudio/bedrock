@@ -146,10 +146,10 @@ $psrLogger = $loggingClient->psrLogger('wordpress', [
  */
 Config::define( 'WP_ALLOW_MULTISITE', true );
 
-if( env('DOMAIN_CURRENT_SITE')  ) {
+if ( env('DOMAIN_CURRENT_SITE') ) {
     
     Config::define( 'MULTISITE', true );
-    Config::define( 'SUBDOMAIN_INSTALL', true );
+    Config::define( 'SUBDOMAIN_INSTALL', env('SUBDOMAIN_INSTALL') ?? true );
     $base = '/';
     Config::define( 'DOMAIN_CURRENT_SITE', env('DOMAIN_CURRENT_SITE') );
     Config::define( 'PATH_CURRENT_SITE', '/' );
@@ -159,15 +159,15 @@ if( env('DOMAIN_CURRENT_SITE')  ) {
     Config::define('PLUGINDIR', 'app/plugin' );
     Config::define('MUPLUGINDIR', 'app/plugin' );
         
-    if( file_exists( CONTENT_DIR . '/sunrise.php' ) ) {
+    if( file_exists( Config::get('CONTENT_DIR') . '/sunrise.php' ) ) {
         Config::define('SUNRISE', 'on' );
     }
 
-    if ( env('COOKIE_DOMAIN') !== null ) {
+    if ( ! is_null( env('COOKIE_DOMAIN') ) ) {
         Config::define( 'COOKIE_DOMAIN', env('COOKIE_DOMAIN') );
     }
 
-    Config::define( 'NOBLOGREDIRECT', env('NOBLOGREDIRECT') ?: WP_HOME . '#noblog' );
+    Config::define( 'NOBLOGREDIRECT', env('NOBLOGREDIRECT') ?: ( Config::get('WP_HOME') . '#noblog' ) );
 }
 
 /**
