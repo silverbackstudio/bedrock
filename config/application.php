@@ -181,6 +181,13 @@ if( env('DOMAIN_CURRENT_SITE')  ) {
 //Helpers\Config::load( __DIR__ . '/googlemaps.json',  'googlemaps' );
 
 /**
+ * Jetpack Compatibility
+ */
+
+// Set the Jetpack Signature port to Google AppEngine internal reverse-proxy 
+Config::define( 'JETPACK_SIGNATURE__HTTPS_PORT', 8080 );
+
+/**
  * Set Sendinblue APi KEY
  */
 if ( env( 'SENDINBLUE_APIKEY' ) ) {

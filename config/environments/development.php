@@ -21,6 +21,9 @@ Config::define('DISALLOW_FILE_MODS', false);
 // Put Jetpack in DEV mode
 Config::define('JETPACK_DEV_DEBUG', true);
 
+// Remove Google AppEngine custom Jetpack signature port
+Config::remove('JETPACK_SIGNATURE__HTTPS_PORT');
+
 // Limit post revisions to 10
 Config::define('WP_POST_REVISIONS', 10 );
 
