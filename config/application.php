@@ -132,18 +132,14 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 \Monolog\Registry::addLogger( new \Monolog\Logger( 'wordpress' ) );
 
 // Add Google Logging Client if is available
-try {
-    $metadataProvider = new \Google\Cloud\Core\Report\SimpleMetadataProvider([], '', 'website', '1.0');
-    $loggingClient = new \Google\Cloud\Logging\LoggingClient();
-    $psrLogger = $loggingClient->psrLogger('wp-website', [
-        'batchEnabled' => true,
-        'metadataProvider' => $metadataProvider,
-    ]);
-    \Google\Cloud\ErrorReporting\Bootstrap::init($psrLogger); 
-    \Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\PsrHandler( $psrLogger ) );
-} catch ( \Google\Cloud\Core\Exception\GoogleException $e ){
-    // No loggin client is available, or throws an error.
-}
+$metadataProvider = \Google\Cloud\Core\Report\MetadataProviderUtils::autoSelect($_SERVER);
+$loggingClient = new \Google\Cloud\Logging\LoggingClient();
+$psrLogger = $loggingClient->psrLogger('wordpress', [
+    'batchEnabled' => true,
+    'metadataProvider' => $metadataProvider,
+]);
+\Google\Cloud\ErrorReporting\Bootstrap::init($psrLogger); 
+\Monolog\Registry::getInstance( 'wordpress' )->pushHandler( new Monolog\Handler\PsrHandler( $psrLogger ) );
 
 /**
  * Multisite options
