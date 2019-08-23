@@ -12,36 +12,25 @@ web/app/themes/*
 web/wp
 web/.htaccess
 
+# Logs
+*.log
+
 # Dotenv
 .env
 .env.*
 !.env.example
 
 # Composer
-vendor/*
-!vendor/.gitkeep
+/vendor
 
 # WP-CLI
-db-sync
-*.sql
-
-# Node Package Manager
-node_modules/*
+wp-cli.local.yml
 
 # Dev Tools
-bin
-.vagrant
 .devcontainer/dbdata
-
-#Logs
-*.log
 
 #Configs
 php.ini
 
-#Scripts
-setup_bedrock.sh
-
 # Git folder/updates
-packages
 .github
