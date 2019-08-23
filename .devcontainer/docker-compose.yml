@@ -29,7 +29,8 @@ services:
       APACHE_WORKING_DIR: /var/www/html/web/
       APACHE_HTTP_PORT: 8080
       APACHE_HTTPS_PORT: 8443
-      CLOUDSDK_CORE_PROJECT: please-set-in-docker-compose-yml
+      CLOUDSDK_CORE_PROJECT: my-project
+      GOOGLE_CLOUD_PROJECT: my-project
     secrets:
       - db_password
   db:  
