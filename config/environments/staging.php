@@ -14,4 +14,8 @@ use Roots\WPConfig\Config;
  * Example: `Config::define('DISALLOW_FILE_MODS', false);`
  */
 
+// Set Jetpack in staging mode
 Config::define('JETPACK_STAGING_MODE', true);
+
+// Limit post revisions to 10
+Config::define('WP_POST_REVISIONS', 10 );
