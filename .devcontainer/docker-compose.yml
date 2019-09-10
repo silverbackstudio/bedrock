@@ -18,14 +18,6 @@ services:
       - "~/.gitcookies:/home/developer/.gitcookies:ro"      
       - "~/.config/gcloud:/home/developer/.config/gcloud"
     environment:
-      DB_HOST: db:3306
-      DB_USER: wordpress
-      DB_NAME: wordpress
-      DB_PREFIX: wp_
-      DB_PASSWORD_FILE: /run/secrets/db_password
-      WP_ENV: development
-      WP_HOME: https://localhost
-      WP_SITEURL: https://localhost/wp
       APACHE_WORKING_DIR: /var/www/html/web/
       APACHE_HTTP_PORT: 8080
       APACHE_HTTPS_PORT: 8443
