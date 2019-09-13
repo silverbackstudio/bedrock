@@ -66,7 +66,7 @@ RUN { \
 	} > /usr/local/etc/php/conf.d/error-logging.ini
 
 # Install required packages and tools
-RUN apt-get -y install git procps lsb-release dialog unzip nano mysql-client ssl-cert
+RUN apt-get -y install git procps lsb-release dialog unzip nano mariadb-client ssl-cert
 
 # Install NodeJS 10
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
