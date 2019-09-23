@@ -55,14 +55,14 @@ RUN { \
 # https://codex.wordpress.org/Editing_wp-config.php#Configure_Error_Logging
 RUN { \
 		echo 'error_reporting = 4339'; \
-		echo 'display_errors = Off'; \
-		echo 'display_startup_errors = Off'; \
+		echo 'display_errors = On'; \
+		echo 'display_startup_errors = On'; \
 		echo 'log_errors = On'; \
-		echo 'error_log = /dev/stderr'; \
+		echo 'error_log = /var/log/php/error.log'; \
 		echo 'log_errors_max_len = 1024'; \
 		echo 'ignore_repeated_errors = On'; \
 		echo 'ignore_repeated_source = Off'; \
-		echo 'html_errors = Off'; \
+		echo 'html_errors = On'; \
 	} > /usr/local/etc/php/conf.d/error-logging.ini
 
 # Install required packages and tools
