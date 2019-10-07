@@ -92,7 +92,7 @@
       "phpcs"
     ],
     "deploy": [
-      "gcloud app deploy --flags-file=flags.yml"
+      "gcloud app deploy app.yaml cron.yaml --flags-file=flags.yml"
     ]    
   }
 }

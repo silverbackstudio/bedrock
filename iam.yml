@@ -1,8 +1,0 @@
-bindings:
-- members:
-  - user:webmaster@silverbackstudio.it
-  role: roles/owner
-- members:
-  - user:b.meniconi@silverbackstudio.it
-  - user:c.focardi@silverbackstudio.it
-  role: roles/editor
