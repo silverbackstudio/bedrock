@@ -38,6 +38,11 @@ function get_real_file_to_load($full_request_uri)
         return '/wp/wp-admin/index.php';
     }
 
+    // Redirect to XMLRPC file
+    if ($request_uri === '/xmlrpc.php') {
+        return '/wp/xmlrpc.php';
+    }    
+
     // Load the file requested if it exists
     if (is_file(__DIR__ . $request_uri)) {
         return $request_uri;
