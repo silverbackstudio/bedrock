@@ -27,6 +27,10 @@ Config::remove('JETPACK_SIGNATURE__HTTPS_PORT');
 // Limit post revisions to 10
 Config::define('WP_POST_REVISIONS', 10 );
 
+// Restore error handlers
+restore_exception_handler();
+restore_error_handler();
+
 /**
  * Setup Dev Handlers
  * Remove the Production Handler and push a file-based one
