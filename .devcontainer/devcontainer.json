@@ -1,6 +1,6 @@
 // See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
-	"name": "Silverback Website",
+	"name": "Silverback Website Template",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "webserver",
 	// Uncomment the next line to automatically install extensions.
