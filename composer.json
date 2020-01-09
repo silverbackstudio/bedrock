@@ -9,7 +9,7 @@
       "name": "Brando Meniconi",
       "email": "b.meniconi@silverbackstudio.it",
       "homepage": "https://github.com/brandomeniconi"
-    },    
+    },
     {
       "name": "Scott Walkinshaw",
       "email": "scott.walkinshaw@gmail.com",
@@ -22,7 +22,12 @@
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
@@ -34,8 +39,8 @@
       "url": "https://wpackagist.org"
     },
     {
-        "type": "composer",
-        "url": "https://packages.svbk.it"
+      "type": "composer",
+      "url": "https://packages.svbk.it"
     }
   ],
   "require": {
@@ -72,21 +77,27 @@
       "silverbackstudio/*": "source",
       "silverback/*": "source",
       "svbk/*": "source",
-      "*":"dist"
+      "*": "dist"
     },
-    "sort-packages": true      
-  },  
+    "sort-packages": true
+  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },
-  "scripts": {      
+  "scripts": {
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
     ],
@@ -95,6 +106,6 @@
     ],
     "deploy": [
       "gcloud app deploy app.yaml cron.yaml --flags-file=flags.yml"
-    ]    
+    ]
   }
 }
