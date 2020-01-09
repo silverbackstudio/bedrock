@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4673cb2e14aacb7529a38776e51fb28c",
+    "content-hash": "b01624fae36065f427ff80f058ee5a1d",
     "packages": [
         {
             "name": "composer/installers",
@@ -1700,6 +1700,41 @@
             "time": "2019-11-08T16:09:03+00:00"
         },
         {
+            "name": "silverback/svbk-wp-hubspot",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverbackstudio/wp-hubspot.git",
+                "reference": "9c70ebaff3e9269341f86d7a08db08807ee583ce"
+            },
+            "dist": {
+                "type": "tar",
+                "url": "https://packages.svbk.it/dist/silverback/svbk-wp-hubspot/silverback-svbk-wp-hubspot-9c70ebaff3e9269341f86d7a08db08807ee583ce-zip-936f1c.tar",
+                "reference": "9c70ebaff3e9269341f86d7a08db08807ee583ce",
+                "shasum": "6cc3a5feb9808dcc3d5c944f4a471eb120a7c2d3"
+            },
+            "require": {
+                "composer/installers": "^1.4",
+                "php": ">=5.6"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-3"
+            ],
+            "authors": [
+                {
+                    "name": "Brando Meniconi",
+                    "email": "b.meniconi@silverbackstudio.it"
+                }
+            ],
+            "description": "WordPress Hubpot Integration Plugin",
+            "support": {
+                "source": "https://github.com/silverbackstudio/wp-hubspot/tree/1.4.2",
+                "issues": "https://github.com/silverbackstudio/wp-hubspot/issues"
+            },
+            "time": "2019-09-13T11:54:21+00:00"
+        },
+        {
             "name": "silverback/wp-helpers",
             "version": "5.4.0",
             "source": {
@@ -1970,24 +2005,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/amp/"
-        },
-        {
-            "name": "wpackagist-plugin/gutenberg",
-            "version": "6.9.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/6.9.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.6.9.0.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
             "name": "wpackagist-plugin/jetpack",
@@ -2349,6 +2366,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
+        },
+        {
+            "name": "wpackagist-plugin/gutenberg",
+            "version": "6.9.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gutenberg/",
+                "reference": "tags/6.9.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.6.9.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
             "name": "wpackagist-plugin/loco-translate",
