@@ -105,7 +105,12 @@
       "phpcs"
     ],
     "deploy": [
-      "gcloud app deploy app.yaml cron.yaml --flags-file=flags.yml"
+      "git pull",
+      "wp language core update",
+      "wp language plugin update --all",
+      "wp language theme update --all",
+      "composer install",
+      "gcloud app deploy app.yaml cron.yaml"
     ]
   }
 }
