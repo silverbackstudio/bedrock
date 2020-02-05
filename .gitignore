@@ -1,4 +1,6 @@
 # Application
+web/app/languages/*
+!web/app/languages/.gitkeep
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*/
