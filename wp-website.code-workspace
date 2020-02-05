@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "theme",
+			"path": "web/app/themes/theme_svbk"
+		},		
+		{
+			"name": "website root",
+			"path": "."
+		}
+	]
+}
