@@ -106,7 +106,9 @@
     ],
     "deploy": [
       "git pull",
-      "wp languages update",
+      "wp language core update",
+      "wp language plugin update --all",
+      "wp language theme update --all",
       "composer install",
       "gcloud app deploy app.yaml cron.yaml"
     ]
