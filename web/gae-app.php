@@ -52,12 +52,26 @@ function get_real_file_to_load($full_request_uri)
     return '/index.php';
 }
 
-// fixes b/111391534
-$_SERVER['HTTPS'] = $_SERVER['HTTP_X_APPENGINE_HTTPS'];
-
 // Loads the expected WordPress framework file
 // (e.g index.php, wp-admin/* or wp-login.php)
 $file = get_real_file_to_load($_SERVER['REQUEST_URI']);
+
+if ( pathinfo( $file, PATHINFO_EXTENSION ) !== 'php' ) {
+    $mime = mime_content_type(__DIR__ . $file);
+    
+    if ( $mime ) {
+        header('Content-Type: ' . $mime);
+    }
+
+    // Ensure at least a minimum 10 min cache is set. The use of a static files CDN is strongly encouraged.
+    header('cache-control: public, max-age=600');
+
+    readfile(__DIR__ . $file);
+    exit;
+}
+
+// fixes b/111391534
+$_SERVER['HTTPS'] = $_SERVER['HTTP_X_APPENGINE_HTTPS'];
 
 // Set the environment variables to reflect the script we're loading
 // (in order to trick WordPress)
@@ -65,5 +79,7 @@ $_SERVER['DOCUMENT_URI']    = $_ENV['DOCUMENT_URI']    = $file;
 $_SERVER['PHP_SELF']        = $_ENV['PHP_SELF']        = $file;
 $_SERVER['SCRIPT_NAME']     = $_ENV['SCRIPT_NAME']     = $file;
 $_SERVER['SCRIPT_FILENAME'] = $_ENV['SCRIPT_FILENAME'] = __DIR__ . $file;
-
+    
 require __DIR__ . $file;
+
+

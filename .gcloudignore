@@ -27,12 +27,12 @@ node_modules/
 # This helps installations with a lot of plugins to not exceed the 10k file limit.
 
 /vendor/
-/web/wp/**/*.php
+/web/wp/
 
 /web/app/mu-plugins/*/*.php
 !/web/app/mu-plugins/*.php
-/web/app/plugins/**/*.php
-/web/app/themes/**/*.php
+/web/app/plugins/
+/web/app/themes/
 /web/app/uploads/
 /web/app/upgrade/
 
