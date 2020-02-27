@@ -1,3 +1,8 @@
+# This files will be ingored in any Google Cloud deployment
+# @see: https://cloud.google.com/sdk/gcloud/reference/topic/gcloudignore
+#
+# Use `gcloud meta list-files-for-upload` command to check which files will be uploaded
+
 # VCS service folders
 .git/
 .github/
@@ -18,18 +23,18 @@ node_modules/
 *.zip
 
 # This folders will be populated by the GAE build system via the `composer install` command.
-# This allows installations with a lot of plugins to not exceed the 10k file limit.
-/vendor/
-/web/wp/
+# We must exclude only dynamic files because the `static_files` handler build before composer install and don't uploads the static files
+# This helps installations with a lot of plugins to not exceed the 10k file limit.
 
-web/app/plugins/
-!web/app/plugins/.gitkeep
-web/app/mu-plugins/
-!web/app/mu-plugins/.gitkeep
-web/app/themes/
-!web/app/themes/.gitkeep
-web/app/uploads/
-web/app/upgrade/
+/vendor/
+/web/wp/**/*.php
+
+/web/app/mu-plugins/*/*.php
+!/web/app/mu-plugins/*.php
+/web/app/plugins/**/*.php
+/web/app/themes/**/*.php
+/web/app/uploads/
+/web/app/upgrade/
 
 # Htaccess files are ignored in App Engine
 web/.htaccess
