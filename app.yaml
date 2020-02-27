@@ -1,5 +1,5 @@
 # App Engine runtime configuration
-runtime: php72
+runtime: php73
 instance_class: F1
 
 # Defaults to "serve index.php" and "serve public/index.php". Can be used to
