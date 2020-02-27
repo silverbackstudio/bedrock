@@ -1,46 +1,35 @@
-.c9
-.c9/
-.devcontainer
-.devcontainer/
-.history
-.history/
-.git
+# VCS service folders
 .git/
-.devcontainer
-.devcontainer/
-.history
-.history/
-.svn
-.svn/
-.github
 .github/
-.appengine
+.svn/
 
+# NPM node_modules
 node_modules/
-/vendor
 
-.env
-.env.*
+# All root hidden files and folders
+/.*
 
-/log
+# Logs, scripts and backups..
 *.log
 *.md
 *.sh
 *.sql
 *.dist
 *.zip
-.gitkeep
 
-# web/app/plugins/**
-# !web/app/plugins/.gitkeep
-# web/app/mu-plugins/*/
-# !web/app/mu-plugins/.gitkeep
-!web/app/uploads/.gitkeep
-# web/app/themes/**
-# !web/app/themes/.gitkeep
+# This folders will be populated by the GAE build system via the `composer install` command.
+# This allows installations with a lot of plugins to not exceed the 10k file limit.
+/vendor/
+/web/wp/
+
+web/app/plugins/
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/
+!web/app/mu-plugins/.gitkeep
+web/app/themes/
+!web/app/themes/.gitkeep
 web/app/uploads/
-web/app/uploads/**
-web/app/upgrade
-web/app/upgrade/**
+web/app/upgrade/
 
+# Htaccess files are ignored in App Engine
 web/.htaccess

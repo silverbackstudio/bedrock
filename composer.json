@@ -110,7 +110,7 @@
       "wp language plugin update --all",
       "wp language theme update --all",
       "composer install",
-      "gcloud app deploy app.yaml cron.yaml"
+      "gcloud beta app deploy app.yaml cron.yaml --no-cache"
     ]
   }
 }
