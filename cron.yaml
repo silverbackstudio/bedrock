@@ -3,3 +3,4 @@ cron:
 - description: "wordpress cron tasks"
   url: /cron.php
   schedule: every 1 hours
+  target: default
