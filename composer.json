@@ -105,6 +105,7 @@
       "phpcs"
     ],
     "deploy": [
+      "Composer\\Config::disableProcessTimeout",
       "git pull",
       "wp language core update",
       "wp language plugin update --all",
