@@ -1,6 +1,7 @@
 # App Engine runtime configuration
 runtime: php73
 instance_class: F1
+service: default
 
 # Defaults to "serve index.php" and "serve public/index.php". Can be used to
 # serve a custom PHP front controller (e.g. "serve backend/index.php") or to
