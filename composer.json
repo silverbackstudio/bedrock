@@ -95,7 +95,8 @@
         "type:wordpress-theme"
       ]
     },
-    "wordpress-install-dir": "web/wp"
+    "wordpress-install-dir": "web/wp",
+    "wordpress-languages": "it_IT"
   },
   "scripts": {
     "post-root-package-install": [
@@ -104,13 +105,19 @@
     "test": [
       "phpcs"
     ],
+    "post-update-cmd": [
+      "Composer\\Config::disableProcessTimeout",
+      "wp language core update",
+      "wp language plugin update --all",
+      "wp language theme update --all"
+    ],
     "deploy": [
       "Composer\\Config::disableProcessTimeout",
       "git pull",
-      "wp language core update",
-      "wp language plugin update --all",
-      "wp language theme update --all",
       "composer install",
+      "wp language core install $(composer config extra.wordpress-languages)",
+      "wp language plugin install $(composer config extra.wordpress-languages) --all",
+      "wp language theme install $(composer config extra.wordpress-languages) --all",
       "gcloud beta app deploy app.yaml cron.yaml --no-cache"
     ]
   }
