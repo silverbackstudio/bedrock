@@ -68,7 +68,7 @@ RUN { \
 
 # Install required packages and tools
 RUN apt-get update; \
-	apt-get -y install git procps lsb-release dialog unzip nano mariadb-client ssl-cert
+	apt-get -y install git procps lsb-release dialog unzip nano mariadb-client ssl-cert wget
 
 # Install NodeJS 10
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \

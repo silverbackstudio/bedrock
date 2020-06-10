@@ -1,9 +1,8 @@
 #! /bin/bash
 # SilverbackStudio AppEngine Project Setup 
-echo "Using Project ID:" $GOOGLE_CLOUD_PROJECT
-
+read -e -p "Project ID: " -i $CLOUDSDK_CORE_PROJECT CLOUDSDK_CORE_PROJECT
 read -p "Domain: " WEBSITE_DOMAIN
-read -p "Billing Account: " BILLING_ACCOUNT
+read -p "Billing Account (leave empty to skip): " BILLING_ACCOUNT
 read -e -p "Cloud Region: " -i "europe-west3" GOOGLE_CLOUD_REGION
 read -e -p "Repo Name: " -i "wp-website" GOOGLE_CLOUD_REPO_NAME
 read -e -p "Cloud SQL instance name: " -i "wp-website" GOOGLE_CLOUD_SQL_NAME
@@ -14,10 +13,10 @@ read -e -p "Database User: " -i "wordpress_user" GOOGLE_CLOUD_SQL_DB_USER
 echo "Creating project in region:" $GOOGLE_CLOUD_REGION
 
 # Enable AppEngine
-gcloud services enable appengine.googleapis.com
+gcloud services enable appengine.googleapis.com sourcerepo.googleapis.com
 
-# Link to billing account
-gcloud beta billing projects link $GOOGLE_CLOUD_PROJECT --billing-account=$BILLING_ACCOUNT
+# Link to billing account if specified
+[ ! -z "$BILLING_ACCOUNT" ] && gcloud beta billing projects link $CLOUDSDK_CORE_PROJECT --billing-account=$BILLING_ACCOUNT
 
 # Set up git repo
 gcloud source repos create $GOOGLE_CLOUD_REPO_NAME
@@ -29,7 +28,7 @@ git push --set-upstream gcloud
 DB_ROOT_PASSWORD=$(openssl rand -base64 24)
 DB_USER_PASSWORD=$(openssl rand -base64 24)
 DB_PREFIX=$(openssl rand -base64 2)
-DB_INSTANCE_NAME=$GOOGLE_CLOUD_PROJECT:$GOOGLE_CLOUD_REGION:$GOOGLE_CLOUD_SQL_NAME
+DB_INSTANCE_NAME=$CLOUDSDK_CORE_PROJECT:$GOOGLE_CLOUD_REGION:$GOOGLE_CLOUD_SQL_NAME
 
 # Create a basic SQL instance
 gcloud sql instances create $GOOGLE_CLOUD_SQL_NAME --root-password=$DB_ROOT_PASSWORD --region=$GOOGLE_CLOUD_REGION --tier=$GOOGLE_CLOUD_SQL_TIER --database-version='MYSQL_5_7' --backup 
@@ -37,7 +36,7 @@ gcloud sql instances create $GOOGLE_CLOUD_SQL_NAME --root-password=$DB_ROOT_PASS
 echo "Started SQL instance $DB_INSTANCE_NAME with root password: " $DB_ROOT_PASSWORD
 
 wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
-
+chmod +x ./cloud_sql_proxy
 ./cloud_sql_proxy -dir=/cloudsql -instances=$DB_INSTANCE_NAME=tcp:3307 & SQL_PID=$!
 sleep 5
 mysql -u root --password=$DB_ROOT_PASSWORD -h 127.0.0.1 --port 3307 -e "\
