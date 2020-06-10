@@ -57,8 +57,11 @@
     "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
+    "phpcompatibility/phpcompatibility-wp": "*",
+    "roave/security-advisories": "dev-master",
     "squizlabs/php_codesniffer": "^3.4.2",
-    "roave/security-advisories": "dev-master"
+    "wp-coding-standards/wpcs": "^2.3"
   },
   "suggest": {
     "silverback/wp-bootstrap": "Installs some common Wordpress plugins"
