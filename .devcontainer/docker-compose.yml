@@ -12,11 +12,13 @@ services:
       - frontend
       - backend
     volumes:
-      - "..:/var/www/html:cached"
+      - "..:/var/www/html"
+      - "~/.composer:/home/developer/.composer:cached"
+      - "~/.npm:/home/developer/.npm:cached"      
       - "~/.gitconfig:/home/developer/.gitconfig:ro"
       - "~/.gitignore:/home/developer/.gitignore:ro" 
       - "~/.gitcookies:/home/developer/.gitcookies:ro"      
-      - "~/.config/gcloud:/home/developer/.config/gcloud"
+      - "~/.config/gcloud:/home/developer/.config/gcloud:ro"
       - "~/.ssh:/home/developer/.ssh:ro"
     environment:
       APACHE_WORKING_DIR: /var/www/html/web/
