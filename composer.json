@@ -95,7 +95,13 @@
     "test": [
       "phpcs"
     ],
-    "post-update-cmd": [
+    "language-install": [
+      "Composer\\Config::disableProcessTimeout",
+      "wp language core install $(composer config extra.wordpress-languages)",
+      "wp language plugin install $(composer config extra.wordpress-languages) --all",
+      "wp language theme install $(composer config extra.wordpress-languages) --all"
+    ],
+    "language-update": [
       "Composer\\Config::disableProcessTimeout",
       "wp language core update",
       "wp language plugin update --all",
@@ -105,9 +111,8 @@
       "Composer\\Config::disableProcessTimeout",
       "git pull",
       "composer install",
-      "wp language core install $(composer config extra.wordpress-languages)",
-      "wp language plugin install $(composer config extra.wordpress-languages) --all",
-      "wp language theme install $(composer config extra.wordpress-languages) --all",
+      "composer language-install",
+      "composer language-update",
       "gcloud beta app deploy app.yaml cron.yaml --no-cache"
     ]
   }
