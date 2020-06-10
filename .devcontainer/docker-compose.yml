@@ -18,7 +18,7 @@ services:
       - "~/.gitconfig:/home/developer/.gitconfig:ro"
       - "~/.gitignore:/home/developer/.gitignore:ro" 
       - "~/.gitcookies:/home/developer/.gitcookies:ro"      
-      - "~/.config/gcloud:/home/developer/.config/gcloud:ro"
+      - "~/.config/gcloud:/home/developer/.config/gcloud"
       - "~/.ssh:/home/developer/.ssh:ro"
     environment:
       APACHE_WORKING_DIR: /var/www/html/web/
