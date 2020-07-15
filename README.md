@@ -42,7 +42,7 @@ This bolerplate is based on Bedrock, a modern WordPress stack that helps you get
 ## Development Environment with Docker
 
 This boliperplate contains a pre-configured Docker environment with dedicated WP and MySQL containers.
-You can find a Visual Studio Code development guide in the [/.devcontainer/README.md](.devcontainer) folder (recommended) or you can manually launch it via [`docker-compose.yaml`](/.devcontainer/docker-compose.yaml) file.
+You can find a Visual Studio Code development guide in the [.devcontainer](/.devcontainer) folder (recommended) or you can manually launch it via [`docker-compose.yaml`](/.devcontainer/docker-compose.yaml) file.
 
 ## Google App Engine
 
