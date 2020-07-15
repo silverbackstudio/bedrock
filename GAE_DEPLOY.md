@@ -105,8 +105,10 @@ Test the app in the local environment before deploying to production.
 ### 4.1 Start the deployment of the app and the cron jobs:
 
 ```bash
-gcloud app deploy app.yaml cron.yaml
+gcloud beta app deploy app.yaml cron.yaml --no-cache
 ```
+
+_The beta's `--no-cache` flag is actually REQUIRED due to [this](https://stackoverflow.com/questions/58343319/deploy-gae-app-with-some-composer-packages-outside-vendor-folder/62921302#62921302) bug in GAE composer installation procedure_
 
 Wait for the app to be successfully deployed. 
 
