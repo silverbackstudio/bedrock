@@ -6,9 +6,21 @@
 * Install [Visual Studio Code](https://code.visualstudio.com/) (version >1.35)
 * Install the [Remote Develompent](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) VSC Extension
 
-### Only Windows
+### WSL2
+This boilerplate works like a charm in a Debian WSL2 (that's actually how we use it, though). You just need to 
+1) Install Docker Destop in the host machine
+2) Enable the Docker Desktop's WSL2 integration
+3) Install the `Remote WSL` VS Code extension
+4) Navigate to your prject folder in the WSL2 terminal. Beware that the folder need to be on the WSL2 disk, accessing /mnt/etc hosts folder is really slow. You can still access your folder via `\\wsl$\{WSL-Name}\`. Ex. `\\wsl$\Debian\home\myuser\workspace\wp-bootstrap`
+5) Launch the command `code .` and wait few seconds for the editor to boot up.
 
-In you want to launch `gcloud` commands from the container with the same user of the host: create a symbolic link for the GCloud config folder to match the Unix one (optional)
+Now you can seek the following steps like normal.
+
+### Native MS Windows
+Windows's OS folder structure is different from the linux one and causes errors on Docker container build. We suggest running the editor from a WSL2 instance. If makes it much more easy.
+
+Few hacks are needed:
+If you want to launch `gcloud` commands from the container with the same user of the host: create a symbolic link for the GCloud config folder to match the Unix one (optional)
 ```
 mklink /J gcloud %USERPROFILE%\AppData\Roaming\gcloud
 ```
@@ -16,7 +28,6 @@ If you need to use Google Cloud Repositories you should also patch the `~/.gitco
 ```
 git config --global http.cookiefile ~/.gitcookies
 ```
-
 
 ## Configuration
 
@@ -26,7 +37,7 @@ If you need to import a database on first env creation you can put multiple `.sq
 
 ## Startup
 
-Open the project folder, the one containing the `.devcontainer` folder, with Visual Studio Code and click on the notification button: `Open Folder in Dev Container`. If you missed it you can open the VSC Command Palette `(F1/Shift+Cmd+P)` and search for `Remote-Containers: Reopen Folder in Container`.
+Open the project folder, with Visual Studio Code and click on the notification button: `Open Folder in Dev Container`. If you missed it you can open the VSC Command Palette `(F1/Shift+Cmd+P)` and search for `Remote-Containers: Reopen Folder in Container`.
 
 After the images are successfully build, the website is available at [https://localhost](https://localhost) or via the custom domain (see below). The first time the environment is created takes a while to download and build all the necessary components.
 
