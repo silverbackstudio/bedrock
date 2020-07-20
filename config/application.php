@@ -31,7 +31,6 @@ Env::init();
 $dotenv = Dotenv\Dotenv::create($root_dir);
 if (file_exists($root_dir . '/.env')) {
     $dotenv->load();
-    $dotenv->required(['WP_HOME', 'WP_SITEURL']);
     if (!env('DATABASE_URL')) {
         $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
     }
@@ -52,15 +51,17 @@ if (isset($_SERVER['HTTP_HOST'])) {
     $http_host = 'localhost';
 }
 
-// Determine HTTP or HTTPS, then set WP_SITEURL and WP_HOME
+/**
+ * Determine HTTP or HTTPS, then set WP_SITEURL and WP_HOME
+ */
 if ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)) {
     $protocol_to_use = 'https://';
 } else {
     $protocol_to_use = 'http://';
 }
 
-Config::define('WP_HOME', env('WP_HOME') ?: $protocol_to_use . $http_host);
-Config::define('WP_SITEURL', env('WP_SITEURL') ?: $protocol_to_use . $http_host . '/wp');
+Config::define('WP_HOME', ( env('WP_HOME') && ! env('DOMAIN_CURRENT_SITE') )  ? env('WP_HOME') : ($protocol_to_use . $http_host) );
+Config::define('WP_SITEURL', env('WP_SITEURL') ?: ($protocol_to_use . $http_host . '/wp') );
 
 /**
  * Custom Content Directory
@@ -147,20 +148,35 @@ if ( env('DOMAIN_CURRENT_SITE') ) {
     Config::define( 'PATH_CURRENT_SITE', '/' );
     Config::define( 'SITE_ID_CURRENT_SITE', 1 );
     Config::define( 'BLOG_ID_CURRENT_SITE', 1 );
+
+    /**
+     * Set legacy constants PLUGINDIR && MUPLUGINDIR, some plugins still use those.
+     */    
+    Config::define('PLUGINDIR', trim( Config::get('CONTENT_DIR'), '/\\' ) . DIRECTORY_SEPARATOR . 'plugins' );
+    Config::define('MUPLUGINDIR', trim( Config::get('CONTENT_DIR'), '/\\' ) . DIRECTORY_SEPARATOR . 'mu-plugins' );
     
-    Config::define('PLUGINDIR', 'app/plugin' );
-    Config::define('MUPLUGINDIR', 'app/plugin' );
-        
+    /**
+     * Set the SUNRISE constant if sunrise.php file is present
+     */    
     if( file_exists( Config::get('CONTENT_DIR') . '/sunrise.php' ) ) {
         Config::define('SUNRISE', 'on' );
     }
 
+    /**
+     * Set cookie domain on the requested site
+     * This allows first-level domains
+     */
     if ( ! is_null( env('COOKIE_DOMAIN') ) ) {
         Config::define( 'COOKIE_DOMAIN', env('COOKIE_DOMAIN') );
     }
 
-    Config::define( 'NOBLOGREDIRECT', env('NOBLOGREDIRECT') ?: ( Config::get('WP_HOME') . '#noblog' ) );
-}
+    /**
+     *  Set NOBLOGREDIRECT to main domain (disable signup page)
+     *  Add a hash to to better indentify the redirect
+     */
+    Config::define( 'NOBLOGREDIRECT', env('NOBLOGREDIRECT') ?: ( $protocol_to_use . Config::get( 'DOMAIN_CURRENT_SITE' ) . '#noblog' ) );
+
+} 
 
 /**
  * Import Global Configs
