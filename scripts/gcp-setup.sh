@@ -1,6 +1,6 @@
 #! /bin/bash
 # SilverbackStudio AppEngine Project Setup 
-read -e -p "Project ID: " -i $CLOUDSDK_CORE_PROJECT CLOUDSDK_CORE_PROJECT
+read -e -p "Project ID: " -i "$CLOUDSDK_CORE_PROJECT" CLOUDSDK_CORE_PROJECT
 read -p "Domain: " WEBSITE_DOMAIN
 read -p "Billing Account (leave empty to skip): " BILLING_ACCOUNT
 read -e -p "Cloud Region: " -i "europe-west3" GOOGLE_CLOUD_REGION
@@ -9,6 +9,7 @@ read -e -p "Cloud SQL instance name: " -i "wp-website" GOOGLE_CLOUD_SQL_NAME
 read -e -p "Database Instance Tier: " -i "db-f1-micro" GOOGLE_CLOUD_SQL_TIER
 read -e -p "Database Name: " -i "wordpress" GOOGLE_CLOUD_SQL_DB_NAME
 read -e -p "Database User: " -i "wordpress_user" GOOGLE_CLOUD_SQL_DB_USER
+read -e -p "AppEngine Env Variables file: " -i "../env_variables.yaml" GAE_ENV_VARIABLES_FILE_PATH
 
 echo "Creating project in region:" $GOOGLE_CLOUD_REGION
 
@@ -48,14 +49,14 @@ kill $SQL_PID
 rm cloud_sql_proxy
 
 # Replace vars in env
-sed -i -e "s/DB_NAME: ''/DB_NAME: '$GOOGLE_CLOUD_SQL_DB_NAME'/g" env_variables.yaml
-sed -i -e "s/DB_USER: ''/DB_USER: '$GOOGLE_CLOUD_SQL_DB_USER'/g" env_variables.yaml
-sed -i -e "s/DB_PASSWORD: ''/DB_PASSWORD: '$DB_USER_PASSWORD'/g" env_variables.yaml
-sed -i -e "s/DB_HOST: '.*'/DB_HOST: ':\/cloudsql\/$DB_INSTANCE_NAME'/g" env_variables.yaml
-sed -i -e "s/DB_PREFIX: '.*'/DB_PREFIX: 'wp${DB_PREFIX}_'/g" env_variables.yaml
+sed -i -e "s/DB_NAME: ''/DB_NAME: '$GOOGLE_CLOUD_SQL_DB_NAME'/g" $GAE_ENV_VARIABLES_FILE_PATH
+sed -i -e "s/DB_USER: ''/DB_USER: '$GOOGLE_CLOUD_SQL_DB_USER'/g" $GAE_ENV_VARIABLES_FILE_PATH
+sed -i -e "s/DB_PASSWORD: ''/DB_PASSWORD: '$DB_USER_PASSWORD'/g" $GAE_ENV_VARIABLES_FILE_PATH
+sed -i -e "s/DB_HOST: '.*'/DB_HOST: ':\/cloudsql\/$DB_INSTANCE_NAME'/g" $GAE_ENV_VARIABLES_FILE_PATH
+sed -i -e "s/DB_PREFIX: '.*'/DB_PREFIX: 'wp${DB_PREFIX}_'/g" $GAE_ENV_VARIABLES_FILE_PATH
 
-sed -i -e "s/WP_HOME: ''/WP_HOME: 'https:\/\/$WEBSITE_DOMAIN'/g" env_variables.yaml
-sed -i -e "s/WP_SITEURL: ''/WP_SITEURL: 'https:\/\/$WEBSITE_DOMAIN\/wp'/g" env_variables.yaml
+sed -i -e "s/WP_HOME: ''/WP_HOME: 'https:\/\/$WEBSITE_DOMAIN'/g" $GAE_ENV_VARIABLES_FILE_PATH
+sed -i -e "s/WP_SITEURL: ''/WP_SITEURL: 'https:\/\/$WEBSITE_DOMAIN\/wp'/g" $GAE_ENV_VARIABLES_FILE_PATH
 
 # # Create AppEngine App
 gcloud app create --region=$GOOGLE_CLOUD_REGION
